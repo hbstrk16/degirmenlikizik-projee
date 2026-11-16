@@ -255,12 +255,12 @@ h1,h2,h3,.section-title,.report-section-title,.teacher-email-box h3,.teacher-stu
 .report-legend{display:flex;gap:7px;flex-wrap:wrap;margin:8px 0}.report-status{display:inline-flex;align-items:center;gap:4px;padding:4px 8px;border-radius:7px;font-size:10px;font-weight:800;white-space:nowrap}.report-status.is-done,.report-mini-status.is-done{background:#e5f4e9;color:#176638;border:1px solid #bfe2c8}.report-status.is-pending,.report-mini-status.is-pending{background:#fdebea;color:#a52d2a;border:1px solid #f2c4c1}.report-status-list{display:flex;flex-wrap:wrap;gap:4px}.report-mini-status{display:inline-block;padding:3px 6px;border-radius:6px;font-size:9px;font-weight:800;white-space:nowrap}.report-no-record{color:#a52d2a;background:#fff1f0;font-weight:700}.report-table tr:nth-child(even) td{background:#f8faf7}
 /* Mobile/PDF parent report: print only the report and constrain it to one A4 page */
 @media print {
-  @page { size: A4 portrait; margin: 8mm; }
+  @page { size: A4 portrait; margin: 5mm; }
   html, body.print-report { width: 210mm !important; min-height: 0 !important; height: auto !important; margin: 0 !important; padding: 0 !important; background: #fff !important; }
   body.print-report * { visibility: hidden !important; }
   body.print-report #parentReport,
   body.print-report #parentReport * { visibility: visible !important; }
-  body.print-report #parentReport { position: absolute !important; inset: 0 auto auto 0 !important; width: 194mm !important; max-width: 194mm !important; margin: 0 !important; padding: 0 !important; border: 0 !important; box-shadow: none !important; overflow: visible !important; font-size: 9pt !important; line-height: 1.25 !important; }
+  body.print-report #parentReport { position: absolute !important; inset: 0 auto auto 0 !important; width: 200mm !important; max-width: 200mm !important; margin: 0 !important; padding: 0 !important; border: 0 !important; box-shadow: none !important; overflow: visible !important; font-size: 9pt !important; line-height: 1.25 !important; }
   body.print-report #parentReport .report-head { padding-bottom: 5px !important; margin-bottom: 6px !important; }
   body.print-report #parentReport .report-head h3 { font-size: 16pt !important; }
   body.print-report #parentReport .report-metrics { grid-template-columns: repeat(4,1fr) !important; gap: 5px !important; margin: 6px 0 !important; }
@@ -284,6 +284,11 @@ h1,h2,h3,.section-title,.report-section-title,.teacher-email-box h3,.teacher-stu
 .parent-report .report-note{margin-top:15px!important;padding:11px!important}
 .parent-report .report-sign{margin-top:25px!important}
 @media print{body.print-report #parentReport .report-section-title{margin-top:13px!important;margin-bottom:5px!important;padding-bottom:2px!important}body.print-report #parentReport .report-metrics{margin:8px 0!important;gap:5px!important}body.print-report #parentReport .report-legend{margin:5px 0!important}body.print-report #parentReport .report-table td,body.print-report #parentReport .report-table th{padding:3px 5px!important}body.print-report #parentReport .report-note{margin-top:7px!important;padding:5px!important}body.print-report #parentReport .report-sign{margin-top:10px!important}}
+
+/* Report typography and full-page A4 width */
+.parent-report .report-head h3,.parent-report .report-section-title{text-transform:uppercase!important;letter-spacing:.35px}
+.parent-report .report-table th{text-transform:capitalize}
+@media print{body.print-report #parentReport{width:200mm!important;max-width:200mm!important}body.print-report #parentReport .report-table{width:100%!important;table-layout:auto!important}body.print-report #parentReport .report-head h3,body.print-report #parentReport .report-section-title{text-transform:uppercase!important}body.print-report #parentReport .report-table th{text-transform:capitalize!important}}
 </style></head><body><main class="wrap">
 <header class="hero"><div class="eyebrow">16–22 KASIM 2026 · 7 GÜNLÜK PROGRAM</div><h1>Değirmenlikızık Proje</h1><p class="hero-subtitle">Ara Tatil Takip Sistemi</p><span class="date-pill">Uludağ’ın Eteğinde Eğitimin Zirvesinde</span></header>
 <section id="auth" class="panel auth-wrap"><div class="auth-mark">🔐</div><h2>Güvenli Giriş</h2><p class="muted">Öğretmen veya öğrenci hesabınla güvenli şekilde giriş yap. İlk kez gelen öğrenciler hesap oluşturabilir.</p><div class="grid"><div class="field"><label>E-POSTA</label><input id="email" type="email" autocomplete="username" placeholder="E-posta adresi"></div><div class="field"><label>ŞİFRE</label><input id="password" type="password" autocomplete="current-password" placeholder="Şifren"></div></div><div class="actions"><button type="button" id="login">Giriş yap</button><button type="button" id="studentSignup" class="secondary">🎓 Öğrenci hesabı oluştur</button></div><p id="authMsg" class="notice">Öğretmen hesabı için tanımlı e-posta adresini kullan.</p></section>
