@@ -497,6 +497,78 @@ h1,h2,h3,.section-title,.report-section-title,.teacher-email-box h3,.teacher-stu
  body.print-report #parentReport .report-modern-panel,body.print-report #parentReport .report-modern-metric{break-inside:avoid!important}
  body.print-report #parentReport,body.print-report #parentReport *{visibility:visible!important}
 }
+
+/* Page-first layout: keep the report as one balanced portrait sheet */
+#parentReport.parent-report{width:100%;max-width:100%;box-sizing:border-box}
+.report-modern-header{min-height:0;padding:20px 18px 16px}
+.report-modern-student,.report-modern-metrics,.report-modern-grid,.report-modern-bottom{box-sizing:border-box}
+.report-modern-grid{grid-template-columns:minmax(0,1.06fr) minmax(0,.94fr);align-items:stretch}
+.report-modern-grid>.report-modern-panel{height:100%}
+.report-modern-bottom{grid-template-columns:minmax(0,1fr) minmax(0,1fr);align-items:stretch}
+.report-modern-bottom>.report-modern-panel{height:100%}
+.report-modern-table{height:auto}
+.responsibilities-table th:first-child,.responsibilities-table td:first-child{width:39%}
+.responsibilities-table th:nth-child(2),.responsibilities-table td:nth-child(2){width:61%}
+.academic-table col:nth-child(1){width:34%}.academic-table col:nth-child(2){width:38%}.academic-table col:nth-child(3),.academic-table col:nth-child(4){width:14%}
+.report-modern-footer{min-height:58px}
+@media(max-width:650px){
+ #parentReport.parent-report{border-radius:10px}
+ .report-modern-header{padding:13px 9px 11px;min-height:0}
+ .report-mountain-mark{font-size:18px;letter-spacing:5px}
+ .report-modern-brand{font-size:clamp(16px,4.7vw,21px);max-width:100%;width:100%;padding:0 3px;box-sizing:border-box}
+ .report-modern-subtitle{font-size:9px;letter-spacing:1.7px;margin-top:5px}
+ .report-modern-date{position:static;align-self:center;margin-top:7px;padding:4px 10px;font-size:10px}
+ .report-modern-date span{font-size:9px}
+ .report-modern-student{margin:8px 8px 7px;gap:6px;padding:6px}
+ .report-student-icon{flex-basis:27px;height:27px;font-size:15px}
+ .report-modern-student>strong{font-size:clamp(13px,3.8vw,17px)}
+ .report-modern-student .report-grade{font-size:10px;padding:5px 7px}
+ .report-modern-metrics{grid-template-columns:repeat(4,minmax(0,1fr));margin:0 8px 8px;gap:4px}
+ .report-modern-metric{grid-template-columns:1fr;grid-template-rows:auto auto auto;text-align:center;padding:5px 2px;gap:1px;border-radius:8px}
+ .report-modern-metric .metric-icon{grid-row:auto;width:24px;height:24px;font-size:16px;margin:auto}
+ .report-modern-metric strong{font-size:clamp(13px,3.8vw,17px)}
+ .report-modern-metric>span:last-child{font-size:8px;line-height:1.15}
+ .report-modern-grid{grid-template-columns:minmax(0,1.06fr) minmax(0,.94fr);gap:5px;margin:0 8px}
+ .report-modern-panel{border-radius:9px}
+ .report-modern-panel-title{font-size:clamp(8px,2.25vw,11px);padding:7px 5px;gap:4px;line-height:1.2}
+ .report-modern-panel-title span{font-size:13px}
+ .report-modern-table{font-size:8px}
+ .report-modern-table th{font-size:8px;padding:5px 3px}
+ .report-modern-table td{font-size:8px;padding:5px 3px;line-height:1.2}
+ .responsibilities-table th:first-child,.responsibilities-table td:first-child{width:39%}
+ .responsibilities-table th:nth-child(2),.responsibilities-table td:nth-child(2){width:61%}
+ .report-modern-table .report-status{font-size:7px;padding:2px 3px;line-height:1.15}
+ .report-modern-table .report-mini-status{font-size:7px;padding:2px 3px;line-height:1.1}
+ .report-modern-table .report-status-list{gap:2px}
+ .report-modern-bottom{grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:5px;margin:7px 8px 0}
+ .report-progress-content{padding:7px 5px;gap:5px}
+ .report-progress-ring{width:55px;height:55px;flex-basis:55px}
+ .report-progress-ring:before{inset:5px}
+ .report-progress-ring strong{font-size:15px}
+ .report-progress-stats{gap:4px}
+ .report-progress-stats>div{font-size:7px;padding:4px 3px;gap:3px;line-height:1.15}
+ .report-progress-stats>div strong{font-size:7px}
+ .progress-check,.progress-cross,.progress-calendar{font-size:10px}
+ .report-evaluation-text{font-size:8px;line-height:1.35;min-height:0;margin:6px;padding:7px}
+ .report-modern-footer{margin-top:8px;padding:10px 5px;min-height:0;gap:5px}
+ .report-modern-footer strong{font-size:clamp(11px,3.2vw,15px)}
+ .report-footer-mountain{font-size:14px}
+}
+@media print{
+ @page{size:A4 portrait;margin:5mm}
+ html,body.print-report{width:210mm!important;margin:0!important;padding:0!important}
+ body.print-report #parentReport.parent-report{width:200mm!important;max-width:200mm!important;box-sizing:border-box!important}
+ body.print-report #parentReport .report-modern-grid{grid-template-columns:minmax(0,1.06fr) minmax(0,.94fr)!important}
+ body.print-report #parentReport .report-modern-bottom{grid-template-columns:minmax(0,1fr) minmax(0,1fr)!important}
+ body.print-report #parentReport .report-modern-header{padding:12px 16px 10px!important}
+ body.print-report #parentReport .report-modern-student{margin:8px 12px!important}
+ body.print-report #parentReport .report-modern-metrics{margin:7px 12px 9px!important}
+ body.print-report #parentReport .report-modern-grid{margin:0 12px!important;gap:8px!important}
+ body.print-report #parentReport .report-modern-bottom{margin:8px 12px 0!important;gap:8px!important}
+ body.print-report #parentReport .report-modern-table th,body.print-report #parentReport .report-modern-table td{padding:5px 4px!important}
+ body.print-report #parentReport .report-modern-footer{margin-top:9px!important;padding:12px!important}
+ body.print-report #parentReport .report-modern-panel,body.print-report #parentReport .report-modern-metric{break-inside:avoid!important}
+}
 </style></head><body><main class="wrap">
 <header class="hero"><div class="eyebrow">16–22 KASIM 2026 · 7 GÜNLÜK PROGRAM</div><h1>Değirmenlikızık Proje</h1><p class="hero-subtitle">Ara Tatil Takip Sistemi</p><span class="date-pill">Uludağ’ın Eteğinde Eğitimin Zirvesinde</span></header>
 <section id="auth" class="panel auth-wrap"><div class="auth-mark">🔐</div><h2>Güvenli Giriş</h2><p class="muted">Öğretmen veya öğrenci hesabınla güvenli şekilde giriş yap. İlk kez gelen öğrenciler hesap oluşturabilir.</p><div class="grid"><div class="field"><label>E-POSTA</label><input id="email" type="email" autocomplete="username" placeholder="E-posta adresi"></div><div class="field"><label>ŞİFRE</label><input id="password" type="password" autocomplete="current-password" placeholder="Şifren"></div></div><div class="actions"><button type="button" id="login">Giriş yap</button><button type="button" id="studentSignup" class="secondary">🎓 Öğrenci hesabı oluştur</button></div><p id="authMsg" class="notice">Öğretmen hesabı için tanımlı e-posta adresini kullan.</p></section>
