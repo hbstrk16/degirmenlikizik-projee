@@ -59,7 +59,7 @@ h1,h2,h3,.section-title,.report-section-title{text-transform:capitalize}
 /* Typography & readability pass */
 :root{--type-display:clamp(1.8rem,4vw,2.65rem);--type-section:1.2rem;--type-body:.95rem;--type-small:.82rem}
 body{font-size:var(--type-body);line-height:1.62;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
-h1,h2,h3,.section-title,.report-section-title{text-transform:none;line-height:1.25}
+h1,h2,h3,.section-title,.report-section-title{text-transform:capitalize;line-height:1.25}
 .hero h1{font-size:var(--type-display);line-height:1.12;font-weight:850;max-width:680px}
 .hero .eyebrow{font-size:.7rem;line-height:1.4;font-weight:800;letter-spacing:.13em}
 .hero p{font-size:1rem;line-height:1.65}
@@ -198,6 +198,9 @@ body{background:#eef3ec}
  #records .summary-card strong{font-size:23px}
  .tabs button{font-size:11px;min-height:52px}
 }
+
+/* Capitalize Each Word In Visible Headings */
+h1,h2,h3,.section-title,.report-section-title,.teacher-email-box h3,.teacher-student-head b,.teacher-study-head b{ text-transform:capitalize; }
 </style></head><body><main class="wrap">
 <header class="hero"><div class="eyebrow">16–22 KASIM 2026 · 7 GÜNLÜK PROGRAM</div><h1>🌿 Ara Tatil Takip Sistemi</h1><p>İbadet alışkanlığı · Akademik gelişim · Kur’an-ı Kerim</p><span class="date-pill">Bir haftalık güzel bir gelişim yolculuğu</span></header>
 <section id="auth" class="panel auth-wrap"><div class="auth-mark">🔐</div><h2>Güvenli Giriş</h2><p class="muted">Öğretmen veya öğrenci hesabınla güvenli şekilde giriş yap. İlk kez gelen öğrenciler hesap oluşturabilir.</p><div class="grid"><div class="field"><label>E-POSTA</label><input id="email" type="email" autocomplete="username" placeholder="E-posta adresi"></div><div class="field"><label>ŞİFRE</label><input id="password" type="password" autocomplete="current-password" placeholder="Şifren"></div></div><div class="actions"><button type="button" id="login">Giriş yap</button><button type="button" id="signup" class="secondary">Öğretmen hesabı oluştur</button><button type="button" id="studentSignup" class="secondary">🎓 Öğrenci hesabı oluştur</button></div><p id="authMsg" class="notice">Öğretmen hesabı için tanımlı e-posta adresini kullan.</p></section>
