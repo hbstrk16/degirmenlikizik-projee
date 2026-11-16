@@ -390,6 +390,113 @@ h1,h2,h3,.section-title,.report-section-title,.teacher-email-box h3,.teacher-stu
 .report-page-count{display:inline-flex;align-items:center;padding:5px 9px;border-radius:18px;background:#f5edf0;border:1px solid #e4cfd6;color:#68102f;font-size:12px;font-weight:850;line-height:1.35;white-space:nowrap}
 .report-status-list{align-items:center}
 @media(max-width:650px){.report-page-count{font-size:11px;padding:5px 7px}}
+
+/* Modern dashboard-style parent report */
+#parentReport.parent-report{padding:0!important;background:#fff;border:1px solid #d9c8ca;border-radius:16px;overflow:hidden;color:#17243a}
+.report-modern-header{position:relative;display:flex;flex-direction:column;align-items:center;text-align:center;padding:19px 20px 17px;color:#fff;background:linear-gradient(115deg,#071e3d 0%,#071e3d 17%,#650d2d 18%,#8b153c 70%,#5e0b2a 100%);border-bottom:4px solid #c9a866}
+.report-mountain-mark{font-size:25px;line-height:1;color:#f3dca8;letter-spacing:8px}
+.report-modern-brand{font-family:Georgia,serif;font-weight:900;font-size:clamp(25px,4vw,34px);line-height:1.12;letter-spacing:.6px}
+.report-modern-subtitle{font-size:clamp(14px,2.2vw,19px);font-weight:700;letter-spacing:4px;margin-top:7px}
+.report-modern-date{position:absolute;right:18px;top:17px;background:#fff4df;color:#68102f;border:1px solid #d5b879;border-radius:13px;padding:7px 11px;font-weight:900;font-size:14px}
+.report-modern-date span{display:block;font-size:11px;font-style:italic;text-align:center}
+.report-modern-student{display:flex;align-items:center;gap:12px;margin:15px 18px 12px;padding:10px 13px;border:1px solid #d9c8ce;border-radius:14px;background:linear-gradient(90deg,#fbf1f3,#fff);min-width:0}
+.report-student-icon{display:grid;place-items:center;flex:0 0 40px;height:40px;border-radius:11px;background:#761233;color:white;font-size:20px}
+.report-modern-student>strong{font-family:Georgia,serif;font-size:clamp(20px,3vw,29px);color:#111f3b;min-width:0;overflow-wrap:anywhere}
+.report-modern-student .report-grade{margin-left:auto;align-self:center;display:inline-flex;align-items:center;background:#fff4e5;border:1px solid #d9bd83;border-radius:22px;padding:8px 13px;font-size:15px;color:#68102f;white-space:nowrap}
+.report-modern-metrics{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:9px;margin:0 18px 16px}
+.report-modern-metric{display:grid;grid-template-columns:43px 1fr;grid-template-rows:auto auto;align-items:center;column-gap:8px;padding:9px 10px;border:1px solid #d8c9ce;border-radius:13px;background:#fff;min-width:0}
+.report-modern-metric .metric-icon{grid-row:1/3;display:grid;place-items:center;width:40px;height:40px;border-radius:50%;font-size:26px;background:#f8e6eb;color:#701331}
+.report-modern-metric strong{font-family:Georgia,serif;font-size:clamp(21px,3vw,29px);line-height:1.1;color:#13243f;font-variant-numeric:tabular-nums}
+.report-modern-metric>span:last-child{font-size:11px;color:#25344c;font-weight:700}
+.metric-net .metric-icon{background:#e8eef9;color:#244a82}.metric-books .metric-icon{background:#e6f3eb;color:#176344}.metric-homework .metric-icon{background:#fbf0df;color:#93601f}
+.report-modern-grid{display:grid;grid-template-columns:1.06fr .94fr;gap:12px;margin:0 18px}
+.report-modern-panel{border:1px solid #d8c8cd;border-radius:15px;overflow:hidden;background:#fff;min-width:0}
+.report-modern-panel-title{display:flex;align-items:center;gap:10px;background:linear-gradient(100deg,#650d2d,#8a173c);color:#fff;padding:10px 13px;font-size:15px;font-weight:950;line-height:1.25}
+.report-modern-panel-title span{font-size:20px;color:#f4dfb2}
+.report-modern-table{width:100%;border-collapse:collapse;table-layout:fixed;font-size:11px}
+.report-modern-table th{background:#f2e3e7;color:#17243a;text-align:left;font-size:11px;font-weight:900;padding:8px 7px;border-bottom:1px solid #d9c8ce}
+.report-modern-table td{padding:8px 7px;border-bottom:1px solid #e8dfe1;vertical-align:middle;color:#18263e;overflow-wrap:anywhere;line-height:1.3}
+.report-modern-table tbody tr:last-child td{border-bottom:0}
+.responsibilities-table th:first-child{width:38%}.responsibilities-table td:first-child{font-weight:700}
+.responsibilities-table td:nth-child(2){width:62%}
+.report-modern-table .report-status{font-size:10px;padding:4px 6px;white-space:normal}
+.report-modern-table .report-mini-status{font-size:9px;padding:3px 4px}
+.report-modern-table .report-status-list{gap:3px}
+.report-modern-table .report-status.is-done{background:#e7f5eb;color:#176638;border:1px solid #bfe2c8}
+.report-modern-table .report-status.is-pending{background:#fdebea;color:#a52d2a;border:1px solid #f2c4c1}
+.report-modern-table .report-status.is-done:has(+.unused){background:#e7f5eb}
+.academic-table th{text-align:center}
+.academic-table td:nth-child(3),.academic-table td:nth-child(4){text-align:center;font-variant-numeric:tabular-nums;white-space:nowrap}
+.academic-table td:first-child,.academic-table td:nth-child(2){text-align:left}
+.report-modern-bottom{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:12px 18px 0}
+.report-progress-content{display:flex;align-items:center;gap:12px;padding:14px}
+.report-progress-ring{width:112px;height:112px;flex:0 0 112px;display:grid;place-items:center;border-radius:50%;background:conic-gradient(#27824a var(--progress),#e7e9e7 0);position:relative}
+.report-progress-ring:before{content:"";position:absolute;inset:10px;border-radius:50%;background:white}
+.report-progress-ring>div{position:relative;font-family:Georgia,serif;color:#102440}
+.report-progress-ring strong{font-size:27px}
+.report-progress-stats{display:grid;gap:7px;min-width:0;flex:1}
+.report-progress-stats>div{display:flex;align-items:center;gap:6px;border:1px solid #e0e0dc;border-radius:9px;padding:7px 8px;font-size:10px;font-weight:700;line-height:1.25}
+.report-progress-stats>div strong{margin-left:auto;white-space:nowrap}
+.progress-check,.progress-cross,.progress-calendar{font-size:15px}
+.progress-check{color:#218049}.progress-cross{color:#b93632}.progress-calendar{color:#6c1533}
+.report-evaluation-text{margin:12px;padding:14px;border-radius:12px;background:#fbf0f2;color:#17243a;font-size:13px;line-height:1.55;font-style:italic;min-height:88px;display:flex;align-items:center}
+.report-modern-footer{display:flex;align-items:center;justify-content:center;gap:15px;margin-top:15px;padding:18px 12px;background:linear-gradient(100deg,#061a35,#0b3158,#061a35);border-top:4px solid #c9a866;color:#fff4df;text-align:center}
+.report-modern-footer strong{font-family:Georgia,serif;font-style:italic;font-size:clamp(18px,3vw,25px);line-height:1.25}
+.report-footer-mountain{font-size:24px;color:#e8ce91}
+@media(max-width:650px){
+ .report-modern-header{padding:16px 10px 14px}
+ .report-modern-brand{font-size:22px;max-width:75%}
+ .report-modern-subtitle{font-size:12px;letter-spacing:2px}
+ .report-modern-date{right:8px;top:10px;padding:5px 7px;font-size:11px}
+ .report-modern-student{margin:11px 10px 9px;gap:7px;padding:8px}
+ .report-student-icon{flex-basis:32px;height:32px}
+ .report-modern-student>strong{font-size:18px}
+ .report-modern-student .report-grade{font-size:11px;padding:6px 8px}
+ .report-modern-metrics{margin:0 10px 11px;gap:5px}
+ .report-modern-metric{grid-template-columns:1fr;grid-template-rows:auto auto auto;text-align:center;padding:7px 4px;gap:2px}
+ .report-modern-metric .metric-icon{grid-row:auto;width:29px;height:29px;font-size:19px;margin:auto}
+ .report-modern-metric strong{font-size:18px}
+ .report-modern-metric>span:last-child{font-size:9px}
+ .report-modern-grid{grid-template-columns:1fr;gap:9px;margin:0 10px}
+ .report-modern-panel-title{font-size:13px;padding:8px 10px}
+ .report-modern-table{font-size:10px}
+ .report-modern-table th{font-size:10px;padding:7px 5px}
+ .report-modern-table td{padding:7px 5px}
+ .report-modern-bottom{grid-template-columns:1fr;gap:9px;margin:9px 10px 0}
+ .report-progress-content{padding:10px;gap:10px}
+ .report-progress-ring{width:88px;height:88px;flex-basis:88px}
+ .report-progress-ring strong{font-size:22px}
+ .report-progress-stats>div{font-size:10px;padding:6px}
+ .report-evaluation-text{font-size:12px;min-height:0;margin:9px;padding:11px}
+ .report-modern-footer{margin-top:10px;padding:14px 8px}
+ .report-modern-footer strong{font-size:18px}
+}
+@media print{
+ @page{size:A4 portrait;margin:5mm}
+ body.print-report #parentReport.parent-report{position:absolute!important;inset:0 auto auto 0!important;width:200mm!important;max-width:200mm!important;margin:0!important;padding:0!important;border:0!important;overflow:visible!important}
+ body.print-report #parentReport .report-modern-header{padding:12px 15px 10px!important;min-height:24mm;print-color-adjust:exact;-webkit-print-color-adjust:exact}
+ body.print-report #parentReport .report-modern-brand{font-size:24pt!important}
+ body.print-report #parentReport .report-modern-subtitle{font-size:11pt!important}
+ body.print-report #parentReport .report-modern-date{font-size:9pt!important;top:10px!important;right:12px!important}
+ body.print-report #parentReport .report-modern-student{margin:9px 12px!important}
+ body.print-report #parentReport .report-modern-student>strong{font-size:20pt!important}
+ body.print-report #parentReport .report-modern-metrics{margin:8px 12px 10px!important;gap:6px!important}
+ body.print-report #parentReport .report-modern-metric{padding:7px!important}
+ body.print-report #parentReport .report-modern-metric strong{font-size:17pt!important}
+ body.print-report #parentReport .report-modern-grid{grid-template-columns:1.06fr .94fr!important;gap:8px!important;margin:0 12px!important}
+ body.print-report #parentReport .report-modern-panel-title{font-size:10pt!important;padding:8px!important}
+ body.print-report #parentReport .report-modern-table th,body.print-report #parentReport .report-modern-table td{font-size:7.5pt!important;padding:5px 4px!important}
+ body.print-report #parentReport .report-modern-table .report-mini-status{font-size:6.5pt!important;padding:3px!important}
+ body.print-report #parentReport .report-modern-bottom{grid-template-columns:1fr 1fr!important;gap:8px!important;margin:9px 12px 0!important}
+ body.print-report #parentReport .report-progress-ring{width:84px!important;height:84px!important;flex-basis:84px!important}
+ body.print-report #parentReport .report-progress-ring strong{font-size:20pt!important}
+ body.print-report #parentReport .report-progress-stats>div{font-size:7.5pt!important;padding:5px!important}
+ body.print-report #parentReport .report-evaluation-text{font-size:8pt!important;padding:9px!important;margin:8px!important;min-height:25mm!important}
+ body.print-report #parentReport .report-modern-footer{margin-top:10px!important;padding:13px!important;print-color-adjust:exact;-webkit-print-color-adjust:exact}
+ body.print-report #parentReport .report-modern-footer strong{font-size:17pt!important}
+ body.print-report #parentReport .report-modern-panel,body.print-report #parentReport .report-modern-metric{break-inside:avoid!important}
+ body.print-report #parentReport,body.print-report #parentReport *{visibility:visible!important}
+}
 </style></head><body><main class="wrap">
 <header class="hero"><div class="eyebrow">16–22 KASIM 2026 · 7 GÜNLÜK PROGRAM</div><h1>Değirmenlikızık Proje</h1><p class="hero-subtitle">Ara Tatil Takip Sistemi</p><span class="date-pill">Uludağ’ın Eteğinde Eğitimin Zirvesinde</span></header>
 <section id="auth" class="panel auth-wrap"><div class="auth-mark">🔐</div><h2>Güvenli Giriş</h2><p class="muted">Öğretmen veya öğrenci hesabınla güvenli şekilde giriş yap. İlk kez gelen öğrenciler hesap oluşturabilir.</p><div class="grid"><div class="field"><label>E-POSTA</label><input id="email" type="email" autocomplete="username" placeholder="E-posta adresi"></div><div class="field"><label>ŞİFRE</label><input id="password" type="password" autocomplete="current-password" placeholder="Şifren"></div></div><div class="actions"><button type="button" id="login">Giriş yap</button><button type="button" id="studentSignup" class="secondary">🎓 Öğrenci hesabı oluştur</button></div><p id="authMsg" class="notice">Öğretmen hesabı için tanımlı e-posta adresini kullan.</p></section>
@@ -454,7 +561,34 @@ function syncReportDateToToday(){const el=$('reportDate');if(!el||!el.options.le
 setInterval(syncReportDateToToday,30000);
 setInterval(syncStudentDayToToday,30000);
 document.addEventListener('visibilitychange',()=>{if(!document.hidden){syncReportDateToToday();syncStudentDayToToday()}});
-function createParentReport(){const sid=$('reportStudent').value,date=$('reportDate').value,d=teacherReportData,box=$('parentReport');if(!sid||!date||!d){$('reportStatus').textContent='Öğrenci ve tarih seçmelisin.';return}const st=d.students.find(x=>x.user_id===sid);if(!st)return;const l=d.logs.find(x=>x.student_id===sid&&x.log_date===date)||{},q=d.qurans.find(x=>x.student_id===sid&&x.session_date===date)||{},bk=d.books.filter(x=>x.student_id===sid&&x.reading_date===date),ss=d.studies.filter(x=>x.student_id===sid&&x.study_date===date);const done=v=>v?'<span class="report-status is-done">✓ Tamamlandı</span>':'<span class="report-status is-pending">✕ Tamamlanmadı</span>';const names=[['Sabah','sabah'],['Öğle','ogle'],['İkindi','ikindi'],['Akşam','aksam'],['Yatsı','yatsi']];const prayers=names.map(([n,k])=>'<span class="report-mini-status '+(l['prayer_'+k]?'is-done':'is-pending')+'">'+n+' '+(l['prayer_'+k]?'✓':'✕')+'</span>').join(' ');const meal=[['Sabah','dua_breakfast'],['Öğle','dua_lunch'],['Akşam','dua_dinner']].map(([n,k])=>'<span class="report-mini-status '+(l[k]?'is-done':'is-pending')+'">'+n+' '+(l[k]?'✓':'✕')+'</span>').join(' ');const pages=bk.reduce((a,x)=>a+(x.pages_read||0),0);const qs=ss.reduce((a,x)=>a+(x.solved_questions||0),0);const net=ss.reduce((a,x)=>a+(x.correct||0)-(x.wrong||0)/3,0);const rows=ss.map(x=>{const timed=['Eksik konu dinleme','Deneme sınavı analizi'].includes(x.subject);const description=timed?((x.topic?escapeHtml(x.topic)+' · ':'')+(Number(x.duration_minutes)||0)+' dk ders işlendi'):escapeHtml(x.topic||'—');return '<tr><td>'+escapeHtml(x.subject||'Çalışma')+'</td><td>'+description+'</td><td>'+(x.solved_questions||0)+'</td><td>'+((x.correct||0)-(x.wrong||0)/3).toFixed(2)+'</td></tr>'}).join('')||'<tr><td colspan="4" class="report-no-record">Bu gün için akademik çalışma kaydı girilmemiş.</td></tr>';box.innerHTML='<div class="report-head"><div class="report-brand"><div class="report-kicker">DEĞİRMENLİKIZIK PROJE</div><h3>GÜNLÜK ÖĞRENCİ KARNESİ</h3><div class="report-date">▦ &nbsp;'+date.split('-').reverse().join('.')+'</div></div></div><div class="report-student-row"><h2 class="report-student-name">'+escapeHtml(st.full_name)+'</h2><b class="report-grade">'+st.grade+'. Sınıf</b></div><div class="report-legend"><span class="report-status is-done">✓ Tamamlandı</span><span class="report-status is-pending">✕ Tamamlanmadı</span></div><div class="report-metrics"><div class="report-metric"><strong>'+qs+'</strong><span>Çözülen Soru</span></div><div class="report-metric"><strong>'+net.toFixed(2)+'</strong><span>Toplam Net</span></div><div class="report-metric"><strong>'+pages+'</strong><span>Kitap Sayfası</span></div><div class="report-metric"><strong>'+(l.homework_score??'—')+'</strong><span>Ödev Puanı</span></div></div><div class="report-section-title">GÜNLÜK SORUMLULUKLAR</div><table class="report-table"><tr><th>Takip Alanı</th><th>Durum</th></tr><tr><td>Vakit Namazları</td><td><div class="report-status-list">'+prayers+'</div></td></tr><tr><td>Yemek Duaları</td><td><div class="report-status-list">'+meal+'</div></td></tr><tr><td>Ara Tatil Ödevi</td><td>'+done(!!l.homework_done)+'</td></tr><tr><td>Ders Çalışma</td><td>'+done(!!l.study_done)+'</td></tr><tr><td>Kur’an-ı Kerim</td><td><div class="report-status-list"><span class="report-status is-done">'+(q.completed?'✓ Tamamlandı':'Tamamlanmadı')+' ('+escapeHtml(String(q.section_page||0))+') Sayfa</span></div></td></tr><tr><td>Kitap Okuma</td><td><div class="report-status-list"><span class="report-status is-done">'+(l.book_reading_done?'✓ Tamamlandı':'Tamamlanmadı')+' ('+pages+') Sayfa</span></div></td></tr></table><div class="report-section-title">AKADEMİK ÇALIŞMALAR</div><table class="report-table academic-table"><colgroup><col style="width:27%"><col style="width:43%"><col style="width:15%"><col style="width:15%"></colgroup><thead><tr><th>Ders</th><th>Konu</th><th>Soru</th><th>Net</th></tr></thead><tbody>'+rows+'</tbody></table><div class="report-note">Renk açıklaması: <b style="color:#247044">Yeşil = tamamlandı</b> · <b style="color:#b33b35">Kırmızı = tamamlanmadı</b>. Rapor, öğretmen tarafından sisteme girilen günlük kayıtları esas alır.</div><div class="report-sign"><span>Öğrenci Gelişim Takibi</span></div><div class="report-slogan">Uludağ’ın Eteğinde Eğitimin Zirvesinde</div>';box.classList.remove('hidden');$('reportStatus').textContent='Karne hazır. PDF / Yazdır düğmesine basabilirsin.'} $('makeReport').onclick=createParentReport;$('printReport').onclick=()=>{if($('parentReport').classList.contains('hidden'))createParentReport();if(!$('parentReport').classList.contains('hidden')){document.body.classList.add('print-report');window.print();setTimeout(()=>document.body.classList.remove('print-report'),700)}};
+function createParentReport(){
+ const sid=$('reportStudent').value,date=$('reportDate').value,d=teacherReportData,box=$('parentReport');
+ if(!sid||!date||!d){$('reportStatus').textContent='Öğrenci ve tarih seçmelisin.';return}
+ const st=d.students.find(x=>x.user_id===sid);if(!st)return;
+ const l=d.logs.find(x=>x.student_id===sid&&x.log_date===date)||{},q=d.qurans.find(x=>x.student_id===sid&&x.session_date===date)||{},bk=d.books.filter(x=>x.student_id===sid&&x.reading_date===date),ss=d.studies.filter(x=>x.student_id===sid&&x.study_date===date);
+ const done=v=>v?'<span class="report-status is-done">✓ Tamamlandı</span>':'<span class="report-status is-pending">✕ Tamamlanmadı</span>';
+ const names=[['Sabah','sabah'],['Öğle','ogle'],['İkindi','ikindi'],['Akşam','aksam'],['Yatsı','yatsi']];
+ const prayers=names.map(([n,k])=>'<span class="report-mini-status '+(l['prayer_'+k]?'is-done':'is-pending')+'">'+n+' '+(l['prayer_'+k]?'✓':'✕')+'</span>').join(' ');
+ const meal=[['Sabah','dua_breakfast'],['Öğle','dua_lunch'],['Akşam','dua_dinner']].map(([n,k])=>'<span class="report-mini-status '+(l[k]?'is-done':'is-pending')+'">'+n+' '+(l[k]?'✓':'✕')+'</span>').join(' ');
+ const pages=bk.reduce((a,x)=>a+(x.pages_read||0),0),qs=ss.reduce((a,x)=>a+(x.solved_questions||0),0),net=ss.reduce((a,x)=>a+(x.correct||0)-(x.wrong||0)/3,0);
+ const taskFlags=[...names.map(([,k])=>!!l['prayer_'+k]),...['dua_breakfast','dua_lunch','dua_dinner'].map(k=>!!l[k]),!!l.homework_done,!!l.study_done,!!q.completed,!!l.book_reading_done];
+ const totalTasks=taskFlags.length,completedTasks=taskFlags.filter(Boolean).length,pendingTasks=totalTasks-completedTasks,percent=Math.round(completedTasks/totalTasks*100);
+ const academicRows=ss.map(x=>{const timed=['Eksik konu dinleme','Deneme sınavı analizi'].includes(x.subject);const description=timed?((x.topic?escapeHtml(x.topic)+'<br>':'')+'('+ (Number(x.duration_minutes)||0)+' dk ders işlendi)'):escapeHtml(x.topic||'—');return '<tr><td>'+escapeHtml(x.subject||'Çalışma')+'</td><td>'+description+'</td><td>'+(x.solved_questions||0)+'</td><td>'+((x.correct||0)-(x.wrong||0)/3).toFixed(2)+'</td></tr>'}).join('')||'<tr><td colspan="4" class="report-no-record">Bu gün için akademik çalışma kaydı girilmemiş.</td></tr>';
+ const dateObj=new Date(date+'T12:00:00'),dateLabel=date.split('-').reverse().join('.'),weekday=dateObj.toLocaleDateString('tr-TR',{weekday:'long'});
+ let evaluation='Günlük sorumlulukların '+completedTasks+' tanesini tamamladı, '+pendingTasks+' tanesi tamamlanmadı.';
+ if(ss.length)evaluation+=' Akademik çalışmalarda '+qs+' soru çözdü ve '+net.toFixed(2)+' net elde etti.';
+ else evaluation+=' Bu gün için akademik çalışma kaydı bulunmuyor.';
+ box.innerHTML=
+ '<div class="report-modern-header"><div class="report-mountain-mark">⌁ ▲ ⌁</div><div class="report-modern-brand">DEĞİRMENLİKIZIK PROJE</div><div class="report-modern-subtitle">GÜNLÜK ÖĞRENCİ KARNESİ</div><div class="report-modern-date">▦ &nbsp;'+dateLabel+' <span>'+weekday+'</span></div></div>'+
+ '<div class="report-modern-student"><span class="report-student-icon">●</span><strong>'+escapeHtml(st.full_name)+'</strong><span class="report-grade">◆ &nbsp;'+st.grade+'. Sınıf</span></div>'+
+ '<div class="report-modern-metrics"><div class="report-modern-metric metric-questions"><span class="metric-icon">▤</span><strong>'+qs+'</strong><span>Çözülen Soru</span></div><div class="report-modern-metric metric-net"><span class="metric-icon">◎</span><strong>'+net.toFixed(2)+'</strong><span>Toplam Net</span></div><div class="report-modern-metric metric-books"><span class="metric-icon">▣</span><strong>'+pages+'</strong><span>Kitap Sayfası</span></div><div class="report-modern-metric metric-homework"><span class="metric-icon">☑</span><strong>'+(l.homework_score??'—')+'</strong><span>Ödev Puanı</span></div></div>'+
+ '<div class="report-modern-grid"><section class="report-modern-panel"><div class="report-modern-panel-title"><span>☑</span> GÜNLÜK SORUMLULUKLAR</div><table class="report-modern-table responsibilities-table"><thead><tr><th>Takip Alanı</th><th>Durum</th></tr></thead><tbody><tr><td>Vakit Namazları</td><td><div class="report-status-list">'+prayers+'</div></td></tr><tr><td>Yemek Duaları</td><td><div class="report-status-list">'+meal+'</div></td></tr><tr><td>Ara Tatil Ödevi</td><td>'+done(!!l.homework_done)+'</td></tr><tr><td>Ders Çalışma</td><td>'+done(!!l.study_done)+'</td></tr><tr><td>Kur’an-ı Kerim</td><td><span class="report-status is-done">'+(q.completed?'✓ Tamamlandı':'Tamamlanmadı')+' ('+escapeHtml(String(q.section_page||0))+') Sayfa</span></td></tr><tr><td>Kitap Okuma</td><td><span class="report-status is-done">'+(l.book_reading_done?'✓ Tamamlandı':'Tamamlanmadı')+' ('+pages+') Sayfa</span></td></tr></tbody></table></section>'+
+ '<section class="report-modern-panel"><div class="report-modern-panel-title"><span>▥</span> AKADEMİK ÇALIŞMALAR</div><table class="report-modern-table academic-table"><colgroup><col style="width:34%"><col style="width:38%"><col style="width:14%"><col style="width:14%"></colgroup><thead><tr><th>Çalışma Türü</th><th>Konu</th><th>Soru</th><th>Net</th></tr></thead><tbody>'+academicRows+'</tbody></table></section></div>'+
+ '<div class="report-modern-bottom"><section class="report-modern-panel report-progress-panel"><div class="report-modern-panel-title"><span>▥</span> GÜNLÜK GENEL DURUM</div><div class="report-progress-content"><div class="report-progress-ring" style="--progress:'+percent+'%"><div><strong>%'+percent+'</strong></div></div><div class="report-progress-stats"><div><b class="progress-check">✓</b> Tamamlanan Görev: <strong>'+completedTasks+'</strong></div><div><b class="progress-cross">×</b> Tamamlanmayan Görev: <strong>'+pendingTasks+'</strong></div><div><b class="progress-calendar">▦</b> Genel Takip Puanı: <strong>'+percent+' / 100</strong></div></div></div></section>'+
+ '<section class="report-modern-panel report-evaluation-panel"><div class="report-modern-panel-title"><span>☏</span> GÜNLÜK DEĞERLENDİRME</div><div class="report-evaluation-text">'+escapeHtml(evaluation)+'</div></section></div>'+
+ '<div class="report-modern-footer"><span class="report-footer-mountain">▲</span><strong>Uludağ’ın Eteğinde Eğitimin Zirvesinde</strong><span class="report-footer-mountain">▲</span></div>';
+ box.classList.remove('hidden');$('reportStatus').textContent='Karne hazır. PDF / Yazdır düğmesine basabilirsin.'
+} $('makeReport').onclick=createParentReport;$('printReport').onclick=()=>{if($('parentReport').classList.contains('hidden'))createParentReport();if(!$('parentReport').classList.contains('hidden')){document.body.classList.add('print-report');window.print();setTimeout(()=>document.body.classList.remove('print-report'),700)}};
 async function loadTeacher(){
  const {data:roster,error}=await db.from('student_roster').select('id,full_name,grade,email').order('full_name');
  if(error){$('teacherRecords').textContent='Öğrenci listesi yüklenemedi: '+error.message;return}
