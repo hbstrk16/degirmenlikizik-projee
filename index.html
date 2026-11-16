@@ -238,8 +238,20 @@ h1,h2,h3,.section-title,.report-section-title,.teacher-email-box h3,.teacher-stu
 .hero .hero-subtitle{width:100%;max-width:760px;margin:0 auto 30px!important;color:#f2f6ef!important;font-size:clamp(21px,3.7vw,36px)!important;font-weight:750!important;line-height:1.25!important;letter-spacing:-.025em!important;text-align:center}
 .hero .date-pill{display:inline-flex;align-items:center;justify-content:center;align-self:center;max-width:100%;margin:0;padding:13px 23px;border:1px solid rgba(239,229,190,.48);border-radius:999px;background:rgba(9,39,29,.2);color:#fff;font-size:clamp(12px,1.8vw,16px);font-weight:850;line-height:1.45;letter-spacing:.015em;text-align:center;white-space:normal}
 @media(max-width:650px){.hero{padding:30px 18px 32px;border-radius:23px}.hero .eyebrow{margin-bottom:23px;padding:9px 12px;letter-spacing:.09em;font-size:10px}.hero .eyebrow:before{width:7px;height:7px;flex-basis:7px;margin-right:8px}.hero h1{font-size:clamp(27px,7.5vw,36px);margin-bottom:13px}.hero .hero-subtitle{font-size:clamp(20px,5.7vw,25px)!important;margin-bottom:24px!important}.hero .date-pill{padding:11px 15px;font-size:12px}.hero:after{right:6px;top:7px;font-size:58px}}
+
+/* Refined symmetry: remove one-sided leaf and center every line precisely */
+.hero{align-items:center;text-align:center}
+.hero:after{content:none!important;display:none!important}
+.hero:before{content:"";inset:auto auto -58% 50%;transform:translateX(-50%);width:min(760px,95%);height:90%;border:1px solid rgba(255,255,255,.12);border-radius:50%;box-shadow:0 0 0 24px rgba(255,255,255,.025),0 0 0 52px rgba(255,255,255,.02)}
+.hero .eyebrow{position:relative;display:block;width:fit-content;max-width:100%;padding:11px 22px;margin-left:auto;margin-right:auto;text-align:center}
+.hero .eyebrow:before{display:none!important;content:none!important}
+.hero h1,.hero .hero-subtitle,.hero .date-pill{display:block;width:100%;margin-left:auto!important;margin-right:auto!important;text-align:center!important}
+.hero h1{max-width:900px}
+.hero .hero-subtitle{max-width:760px}
+.hero .date-pill{width:fit-content;max-width:100%;white-space:normal}
+@media(max-width:650px){.hero .eyebrow{width:100%;padding:9px 8px;font-size:10px}.hero h1{max-width:100%;font-size:clamp(27px,7.5vw,36px)}.hero .hero-subtitle{max-width:100%}.hero .date-pill{width:100%;max-width:100%}}
 </style></head><body><main class="wrap">
-<header class="hero"><div class="eyebrow">16–22 KASIM 2026 · 7 GÜNLÜK PROGRAM</div><h1>🌿 Değirmenlikızık Proje</h1><p class="hero-subtitle">Ara Tatil Takip Sistemi</p><span class="date-pill">Uludağ’ın Eteğinde Eğitimin Zirvesinde</span></header>
+<header class="hero"><div class="eyebrow">16–22 KASIM 2026 · 7 GÜNLÜK PROGRAM</div><h1>Değirmenlikızık Proje</h1><p class="hero-subtitle">Ara Tatil Takip Sistemi</p><span class="date-pill">Uludağ’ın Eteğinde Eğitimin Zirvesinde</span></header>
 <section id="auth" class="panel auth-wrap"><div class="auth-mark">🔐</div><h2>Güvenli Giriş</h2><p class="muted">Öğretmen veya öğrenci hesabınla güvenli şekilde giriş yap. İlk kez gelen öğrenciler hesap oluşturabilir.</p><div class="grid"><div class="field"><label>E-POSTA</label><input id="email" type="email" autocomplete="username" placeholder="E-posta adresi"></div><div class="field"><label>ŞİFRE</label><input id="password" type="password" autocomplete="current-password" placeholder="Şifren"></div></div><div class="actions"><button type="button" id="login">Giriş yap</button><button type="button" id="signup" class="secondary">Öğretmen hesabı oluştur</button><button type="button" id="studentSignup" class="secondary">🎓 Öğrenci hesabı oluştur</button></div><p id="authMsg" class="notice">Öğretmen hesabı için tanımlı e-posta adresini kullan.</p></section>
 <section id="app" class="hidden">
 <div class="panel" style="margin-top:14px;padding:11px 15px;display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap"><span class="muted">Giriş yapılan hesap</span><b id="activeEmail" style="color:var(--forest);overflow-wrap:anywhere">—</b></div>
