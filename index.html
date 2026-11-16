@@ -55,7 +55,57 @@ h1,h2,h3,.section-title,.report-section-title{text-transform:capitalize}
 #teacherRecords{display:grid;gap:14px;margin-top:18px}.teacher-student{background:#fff;border:1px solid #e3ebe2;border-radius:17px;padding:15px;box-shadow:0 5px 18px #26382f08}.teacher-student-head{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-bottom:12px}.teacher-student-head b{font-size:17px;color:var(--forest)}.teacher-day{border:1px solid #e7ece6;border-radius:12px;margin-top:8px;overflow:hidden}.teacher-day summary{display:flex;justify-content:space-between;gap:10px;align-items:center;padding:12px;background:#f7faf6;cursor:pointer;list-style:none}.teacher-day summary::-webkit-details-marker{display:none}.teacher-day[open] summary{border-bottom:1px solid #e7ece6}.teacher-day-body{padding:12px;display:grid;gap:13px}.teacher-detail-block{display:grid;gap:7px}.teacher-detail-block>b{font-size:12px;color:var(--forest)}.daily-pills{display:flex;flex-wrap:wrap;gap:6px}.daily-pill{display:inline-flex;padding:5px 9px;border-radius:20px;font-size:11px;font-weight:750}.daily-pill.done{background:#e8f3e8;color:#28623a}.daily-pill.pending{background:#f5eee4;color:#927044}.teacher-study{padding:10px;border:1px solid #e8eee7;border-radius:10px;margin-top:7px}.teacher-study-head{display:flex;justify-content:space-between;gap:8px}.teacher-study-stats,.teacher-subject{font-size:12px;color:#53645a;margin-top:6px}.teacher-subject-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:7px;margin-top:8px}.teacher-subject{background:#f6f8f5;border-radius:8px;padding:8px;margin:0}.teacher-subject span{display:block;margin-top:4px}@media(max-width:650px){.teacher-student{padding:11px}.teacher-day summary{align-items:flex-start;flex-direction:column;gap:3px}.teacher-subject-grid{grid-template-columns:1fr}}
 /* Daily completion controls and refined task cards */
 #daily{background:linear-gradient(180deg,#fff 0%,#fbfdf9 100%)}#daily .section-title{margin-top:26px}#daily .checks.meals label{min-height:54px;background:linear-gradient(145deg,#fff,#f8fbf7);border:1px solid #e0e9df;border-radius:15px;box-shadow:0 3px 10px rgba(31,73,57,.035);font-size:13px}#daily .checks.meals label:has(input:checked){background:linear-gradient(135deg,#e9f4e9,#f5faf2);border-color:#91b397;box-shadow:inset 0 0 0 1px #b5cfb5}#daily .checks input{width:21px;height:21px;flex:0 0 21px;accent-color:#285744;cursor:pointer}#daily .study-row{border:1px solid #e2eae1;border-radius:16px;background:linear-gradient(145deg,#fff,#fbfdf9);box-shadow:0 5px 16px rgba(31,73,57,.045)}#daily #save{min-height:48px;box-shadow:0 8px 18px #244f4022}#daily #status{border-radius:14px}#daily .field input[type=number]{font-variant-numeric:tabular-nums}
-.teacher-email-box{margin:18px 0 22px;padding:16px;border:1px solid #e2eae1;border-radius:16px;background:linear-gradient(145deg,#fbfdf9,#f2f7f1)}.teacher-email-box h3{margin:0 0 5px;color:var(--forest);font-size:16px}.teacher-email-box>p{margin:0 0 12px}.teacher-email-row{display:grid;grid-template-columns:minmax(120px,1fr) minmax(160px,1.2fr) auto;align-items:center;gap:9px;padding:10px 0;border-top:1px solid #e4ebe3}.teacher-email-name{display:flex;flex-direction:column;gap:2px}.teacher-email-name b{font-size:13px;color:var(--forest)}.teacher-email-row input{min-width:0;padding:10px 11px}.teacher-email-row button{padding:10px 13px;white-space:nowrap}#emailSaveStatus{padding-top:8px;min-height:22px}@media(max-width:650px){.teacher-email-row{grid-template-columns:minmax(0,1fr) auto}.teacher-email-name{grid-column:1/-1}.teacher-email-row input{grid-column:1}.teacher-email-row button{grid-column:2;grid-row:2}}</style></head><body><main class="wrap">
+.teacher-email-box{margin:18px 0 22px;padding:16px;border:1px solid #e2eae1;border-radius:16px;background:linear-gradient(145deg,#fbfdf9,#f2f7f1)}.teacher-email-box h3{margin:0 0 5px;color:var(--forest);font-size:16px}.teacher-email-box>p{margin:0 0 12px}.teacher-email-row{display:grid;grid-template-columns:minmax(120px,1fr) minmax(160px,1.2fr) auto;align-items:center;gap:9px;padding:10px 0;border-top:1px solid #e4ebe3}.teacher-email-name{display:flex;flex-direction:column;gap:2px}.teacher-email-name b{font-size:13px;color:var(--forest)}.teacher-email-row input{min-width:0;padding:10px 11px}.teacher-email-row button{padding:10px 13px;white-space:nowrap}#emailSaveStatus{padding-top:8px;min-height:22px}@media(max-width:650px){.teacher-email-row{grid-template-columns:minmax(0,1fr) auto}.teacher-email-name{grid-column:1/-1}.teacher-email-row input{grid-column:1}.teacher-email-row button{grid-column:2;grid-row:2}}
+/* Typography & readability pass */
+:root{--type-display:clamp(1.8rem,4vw,2.65rem);--type-section:1.2rem;--type-body:.95rem;--type-small:.82rem}
+body{font-size:var(--type-body);line-height:1.62;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+h1,h2,h3,.section-title,.report-section-title{text-transform:none;line-height:1.25}
+.hero h1{font-size:var(--type-display);line-height:1.12;font-weight:850;max-width:680px}
+.hero .eyebrow{font-size:.7rem;line-height:1.4;font-weight:800;letter-spacing:.13em}
+.hero p{font-size:1rem;line-height:1.65}
+.panel h2,#teacher>h2,.auth-wrap h2{font-size:var(--type-section);line-height:1.3;font-weight:850}
+p{line-height:1.65}
+.muted,.hint{font-size:var(--type-small);line-height:1.55}
+.field label,.field-label{font-size:.72rem;line-height:1.4;letter-spacing:.055em;font-weight:800;color:#65766b}
+input,select{font-size:.95rem;line-height:1.4;min-height:46px}
+button{font-size:.9rem;line-height:1.35;min-height:44px}
+.section-title{font-size:1rem;line-height:1.35;font-weight:850;gap:11px}
+.section-title span{flex:0 0 36px}
+.checks label{font-size:.9rem;line-height:1.4}
+.notice{font-size:.86rem;line-height:1.55}
+.stat-top{font-size:.72rem;line-height:1.4}
+.stat b{line-height:1.15;font-variant-numeric:tabular-nums}
+.stat small{font-size:.75rem;line-height:1.4}
+.tabs button{font-size:.86rem;line-height:1.35;font-weight:800}
+.study-row .student-head b{font-size:.98rem;color:var(--forest);font-weight:850}
+.study-row .activity-hint{margin:9px 0 0;padding:9px 11px;background:#f3f7f1;border-radius:10px}
+.study-row .dynamic-fields .panel{background:#f8fbf7;border-color:#e4ece2}
+.teacher-email-box h3{font-size:1rem;line-height:1.35}
+.teacher-email-name b,.teacher-student-head b{font-size:.92rem;line-height:1.4}
+.teacher-day summary{font-size:.88rem;line-height:1.45}
+.teacher-detail-block>b{font-size:.8rem;letter-spacing:.01em}
+.daily-pill{font-size:.75rem;line-height:1.35;padding:6px 10px}
+.teacher-study-stats,.teacher-subject{font-size:.8rem;line-height:1.55}
+.report-head h3{font-size:1.3rem;line-height:1.25}
+.report-section-title{font-size:.86rem}
+@media(max-width:650px){
+ body{font-size:.92rem;line-height:1.6}
+ .hero h1{font-size:1.78rem;line-height:1.15}
+ .hero .eyebrow{font-size:.64rem;letter-spacing:.1em}
+ .hero p{font-size:.86rem;line-height:1.55}
+ .panel h2,.auth-wrap h2{font-size:1.12rem}
+ .field label,.field-label{font-size:.7rem}
+ input,select{font-size:.92rem;min-height:45px}
+ button{font-size:.86rem}
+ .tabs button{font-size:.76rem;line-height:1.35}
+ .checks label{font-size:.84rem;line-height:1.4}
+ .section-title{font-size:.94rem}
+ .muted,.hint{font-size:.79rem}
+ .stat-top{font-size:.64rem;letter-spacing:.02em}
+ .stat small{font-size:.68rem}
+ .teacher-email-row button{font-size:.78rem}
+}
+</style></head><body><main class="wrap">
 <header class="hero"><div class="eyebrow">16–22 KASIM 2026 · 7 GÜNLÜK PROGRAM</div><h1>🌿 Ara Tatil Takip Sistemi</h1><p>İbadet alışkanlığı · Akademik gelişim · Kur’an-ı Kerim</p><span class="date-pill">Bir haftalık güzel bir gelişim yolculuğu</span></header>
 <section id="auth" class="panel auth-wrap"><div class="auth-mark">🔐</div><h2>Güvenli Giriş</h2><p class="muted">Öğretmen veya öğrenci hesabınla güvenli şekilde giriş yap. İlk kez gelen öğrenciler hesap oluşturabilir.</p><div class="grid"><div class="field"><label>E-POSTA</label><input id="email" type="email" autocomplete="username" placeholder="E-posta adresi"></div><div class="field"><label>ŞİFRE</label><input id="password" type="password" autocomplete="current-password" placeholder="Şifren"></div></div><div class="actions"><button type="button" id="login">Giriş yap</button><button type="button" id="signup" class="secondary">Öğretmen hesabı oluştur</button><button type="button" id="studentSignup" class="secondary">🎓 Öğrenci hesabı oluştur</button></div><p id="authMsg" class="notice">Öğretmen hesabı için tanımlı e-posta adresini kullan.</p></section>
 <section id="app" class="hidden">
