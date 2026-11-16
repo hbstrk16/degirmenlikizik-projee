@@ -105,6 +105,35 @@ button{font-size:.9rem;line-height:1.35;min-height:44px}
  .stat small{font-size:.68rem}
  .teacher-email-row button{font-size:.78rem}
 }
+
+/* Visual navigation, category accents and progress feedback */
+.section-title{position:relative;padding:10px 13px 10px 10px;margin:27px 0 13px;border:1px solid #e5ece3;border-radius:15px;background:linear-gradient(100deg,#f7faf5,#fff);box-shadow:0 3px 12px rgba(31,73,57,.035)}
+.section-title:after{content:"";position:absolute;left:0;top:10px;bottom:10px;width:3px;border-radius:5px;background:var(--leaf)}
+#daily .section-title:nth-of-type(2):after{background:#6c9477}
+#daily .section-title:nth-of-type(3):after{background:#b89b61}
+#daily .section-title:nth-of-type(4):after{background:#7391a5}
+#daily .section-title:nth-of-type(5):after{background:#8b7aa8}
+#daily .section-title:nth-of-type(6):after{background:#729b91}
+.section-title span{box-shadow:inset 0 0 0 1px #dfe9dd;background:linear-gradient(145deg,#edf5eb,#e3eee2);color:var(--forest)}
+#daily .section-title:nth-of-type(3) span{background:#f8f1df}
+#daily .section-title:nth-of-type(4) span{background:#edf3f8}
+#daily .section-title:nth-of-type(5) span{background:#f1eef8}
+#daily .section-title:nth-of-type(6) span{background:#eaf4f1}
+.summary-card{position:relative;overflow:hidden}
+.summary-icon{display:grid;place-items:center;width:31px;height:31px;border-radius:10px;background:#edf4ed;font-size:16px;margin-bottom:8px}
+.summary-card strong{font-variant-numeric:tabular-nums}
+.weekly-progress-card{grid-column:1/-1;padding:17px 18px;background:linear-gradient(115deg,#f0f7ef,#fff);border-color:#dce9dc}
+.weekly-progress-head{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:12px;color:var(--forest);font-weight:850}
+.weekly-progress-head>span{font-size:.9rem}
+.weekly-progress-head strong{font-size:1.5rem;color:var(--forest)}
+.weekly-progress-card .progress{height:13px;background:#e2ebe0;border:1px solid #dce7da}
+.weekly-progress-card .progress span{background:linear-gradient(90deg,#4d8060,#a6c58d);transition:width .35s ease}
+.weekly-progress-card small{display:block;margin-top:9px;color:var(--muted);font-size:.78rem}
+.teacher-day summary b{color:var(--forest);font-weight:850}
+.teacher-detail-block{padding:10px 11px;border-radius:12px;background:#fbfcfa;border:1px solid #edf1eb}
+.teacher-detail-block>b{display:flex;align-items:center;gap:7px}
+.teacher-detail-block>b:before{content:"";width:6px;height:6px;border-radius:50%;background:#83a487}
+@media(max-width:650px){.section-title{padding:9px 10px;margin:22px 0 10px}.weekly-progress-card{padding:14px}.weekly-progress-head strong{font-size:1.3rem}.summary-icon{width:28px;height:28px}}
 </style></head><body><main class="wrap">
 <header class="hero"><div class="eyebrow">16–22 KASIM 2026 · 7 GÜNLÜK PROGRAM</div><h1>🌿 Ara Tatil Takip Sistemi</h1><p>İbadet alışkanlığı · Akademik gelişim · Kur’an-ı Kerim</p><span class="date-pill">Bir haftalık güzel bir gelişim yolculuğu</span></header>
 <section id="auth" class="panel auth-wrap"><div class="auth-mark">🔐</div><h2>Güvenli Giriş</h2><p class="muted">Öğretmen veya öğrenci hesabınla güvenli şekilde giriş yap. İlk kez gelen öğrenciler hesap oluşturabilir.</p><div class="grid"><div class="field"><label>E-POSTA</label><input id="email" type="email" autocomplete="username" placeholder="E-posta adresi"></div><div class="field"><label>ŞİFRE</label><input id="password" type="password" autocomplete="current-password" placeholder="Şifren"></div></div><div class="actions"><button type="button" id="login">Giriş yap</button><button type="button" id="signup" class="secondary">Öğretmen hesabı oluştur</button><button type="button" id="studentSignup" class="secondary">🎓 Öğrenci hesabı oluştur</button></div><p id="authMsg" class="notice">Öğretmen hesabı için tanımlı e-posta adresini kullan.</p></section>
@@ -148,7 +177,8 @@ let studyRows=[...document.querySelectorAll('.study-row')].map(row=>{let val=k=>
 let q={student_id:user.id,session_date:date,completed:$('quranDone').checked,duration_minutes:0,section_page:$('quranPart').value};let {error:e3}=await db.from('quran_sessions').upsert(q,{onConflict:'student_id,session_date'});if(e3){$('status').textContent=e3.message;return}let book={student_id:user.id,reading_date:date,book_title:$('bookTitle').value.trim(),pages_read:Number($('bookPages').value)||0,duration_minutes:0};let bd=await db.from('book_reading_sessions').delete().eq('student_id',user.id).eq('reading_date',date);if(bd.error){$('status').textContent=bd.error.message;return}if($('bookDone').checked||book.book_title||book.pages_read){if(!book.book_title){$('status').textContent='Kitap kaydı için kitap adını yazmalısın.';return}let bi=await db.from('book_reading_sessions').insert(book);if(bi.error){$('status').textContent=bi.error.message;return}}$('status').textContent='✓ Günlük kayıtların başarıyla kaydedildi.';await loadRecords()};
 async function loadRecords(){let {data:logs}=await db.from('daily_logs').select('*').eq('student_id',user.id).order('log_date'),{data:studies}=await db.from('study_sessions').select('*').eq('student_id',user.id).order('study_date'),{data:qurans}=await db.from('quran_sessions').select('*').eq('student_id',user.id).order('session_date'),{data:books}=await db.from('book_reading_sessions').select('*').eq('student_id',user.id).order('reading_date');logs=logs||[];studies=studies||[];qurans=qurans||[];books=books||[]
 let prayerTotal=logs.reduce((a,l)=>a+['sabah','ogle','ikindi','aksam','yatsi'].filter(k=>l['prayer_'+k]).length,0),duaTotal=logs.reduce((a,l)=>a+['breakfast','lunch','dinner'].filter(k=>l['dua_'+k]).length,0),minutes=studies.reduce((a,s)=>a+(s.duration_minutes||0),0),net=studies.reduce((a,s)=>a+(s.correct||0)-(s.wrong||0)/3,0),qDone=qurans.filter(q=>q.completed).length,bookPages=books.reduce((a,b)=>a+(b.pages_read||0),0);
-$('weeklyStats').innerHTML='<div class="summary-card"><strong>'+prayerTotal+'/35</strong><span>Vakit namaz</span></div><div class="summary-card"><strong>'+duaTotal+'/21</strong><span>Yemek duası</span></div><div class="summary-card"><strong>'+minutes+' dk</strong><span>Akademik çalışma</span></div><div class="summary-card"><strong>'+net.toFixed(2)+'</strong><span>Toplam net</span></div><div class="summary-card"><strong>'+qDone+'/7</strong><span>Kur’an okunan gün</span></div><div class="summary-card"><strong>'+bookPages+'</strong><span>Kitapta okunan sayfa</span></div><div class="summary-card"><strong>'+studies.reduce((a,s)=>a+(s.solved_questions||0),0)+'</strong><span>Çözülen toplam soru</span></div>';
+let completedChecks=prayerTotal+duaTotal+logs.filter(l=>l.homework_done).length+logs.filter(l=>l.study_done).length+qDone+logs.filter(l=>l.book_reading_done).length,checkTotal=84,completionPct=Math.round(completedChecks/checkTotal*100);
+$('weeklyStats').innerHTML='<div class="summary-card weekly-progress-card"><div class="weekly-progress-head"><span>🌟 Haftalık tamamlama</span><strong>'+completionPct+'%</strong></div><div class="progress"><span style="width:'+completionPct+'%"></span></div><small>'+completedChecks+' / '+checkTotal+' alışkanlık ve görev tamamlandı</small></div><div class="summary-card"><div class="summary-icon">🕌</div><strong>'+prayerTotal+'/35</strong><span>Vakit namaz</span></div><div class="summary-card"><div class="summary-icon">🤲</div><strong>'+duaTotal+'/21</strong><span>Yemek duası</span></div><div class="summary-card"><div class="summary-icon">📚</div><strong>'+minutes+' dk</strong><span>Akademik çalışma</span></div><div class="summary-card"><div class="summary-icon">🎯</div><strong>'+net.toFixed(2)+'</strong><span>Toplam net</span></div><div class="summary-card"><div class="summary-icon">📖</div><strong>'+qDone+'/7</strong><span>Kur’an okunan gün</span></div><div class="summary-card"><div class="summary-icon">📘</div><strong>'+bookPages+'</strong><span>Kitapta okunan sayfa</span></div><div class="summary-card"><div class="summary-icon">✍️</div><strong>'+studies.reduce((a,s)=>a+(s.solved_questions||0),0)+'</strong><span>Çözülen toplam soru</span></div>';
 let rows=days.map((d,i)=>{let date=dateForDay(i),l=logs.find(x=>x.log_date===date)||{},ss=studies.filter(x=>x.study_date===date),q=qurans.find(x=>x.session_date===date)||{},pc=['sabah','ogle','ikindi','aksam','yatsi'].filter(k=>l['prayer_'+k]).length,mc=['breakfast','lunch','dinner'].filter(k=>l['dua_'+k]).length,n=ss.reduce((a,s)=>a+(s.correct||0)-(s.wrong||0)/3,0).toFixed(2),subjects=ss.map(s=>s.subject).join(', '),solved=ss.reduce((a,s)=>a+(s.solved_questions||0),0);return '<tr><td>'+d+'</td><td>'+pc+'/5</td><td>'+mc+'/3</td><td>'+(subjects||'—')+'</td><td>'+solved+'</td><td>'+n+'</td><td>'+(q.completed?'✓':'—')+'</td></tr>'}).join('');
 $('myRecords').innerHTML='<div class="tablewrap"><table><thead><tr><th>Gün</th><th>Namaz</th><th>Dua</th><th>Ders</th><th>Soru</th><th>Net</th><th>Kur’an</th></tr></thead><tbody>'+rows+'</tbody></table></div>'}
 function teacherPill(label,done){return '<span class="daily-pill '+(done?'done':'pending')+'">'+label+'</span>'}
