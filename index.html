@@ -680,6 +680,27 @@ h1,h2,h3,.section-title,.report-section-title,.teacher-email-box h3,.teacher-stu
  body.print-report #parentReport .report-table:not(.academic-table) .report-status,
  body.print-report #parentReport .report-table:not(.academic-table) .report-mini-status{font-size:12px!important}
 }
+
+/* Final emphasis for the three main report headings */
+#parentReport .report-head h3{
+ font-size:19px!important;
+ font-weight:850!important;
+}
+#parentReport .report-section-title{
+ font-size:17px!important;
+ font-weight:900!important;
+ letter-spacing:.5px!important;
+ padding-top:10px!important;
+ padding-bottom:10px!important;
+}
+@media(max-width:650px){
+ #parentReport .report-head h3{font-size:14px!important}
+ #parentReport .report-section-title{font-size:13px!important;padding-top:9px!important;padding-bottom:9px!important}
+}
+@media print{
+ body.print-report #parentReport .report-head h3{font-size:19px!important}
+ body.print-report #parentReport .report-section-title{font-size:17px!important}
+}
 </style></head><body><main class="wrap">
 <header class="hero"><div class="eyebrow">16–22 KASIM 2026 · 7 GÜNLÜK PROGRAM</div><h1>Değirmenlikızık Proje</h1><p class="hero-subtitle">Ara Tatil Takip Sistemi</p><span class="date-pill">Uludağ’ın Eteğinde Eğitimin Zirvesinde</span></header>
 <section id="auth" class="panel auth-wrap"><div class="auth-mark">🔐</div><h2>Güvenli Giriş</h2><p class="muted">Öğretmen veya öğrenci hesabınla güvenli şekilde giriş yap. İlk kez gelen öğrenciler hesap oluşturabilir.</p><div class="grid"><div class="field"><label>E-POSTA</label><input id="email" type="email" autocomplete="username" placeholder="E-posta adresi"></div><div class="field"><label>ŞİFRE</label><input id="password" type="password" autocomplete="current-password" placeholder="Şifren"></div></div><div class="actions"><button type="button" id="login">Giriş yap</button><button type="button" id="studentSignup" class="secondary">🎓 Öğrenci hesabı oluştur</button></div><p id="authMsg" class="notice">Öğretmen hesabı için tanımlı e-posta adresini kullan.</p></section>
