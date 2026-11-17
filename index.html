@@ -778,6 +778,36 @@ h1,h2,h3,.section-title,.report-section-title,.teacher-email-box h3,.teacher-stu
  body.print-group-report #groupReport .group-sign{margin-top:4px!important;font-size:9pt!important}
  body.print-group-report #groupReport tr{break-inside:avoid!important;page-break-inside:avoid!important}
 }
+
+/* Toplu karne okunabilirlik düzeltmesi */
+#groupReport{border:2px solid #7b1738!important;padding:14px!important;background:#fff!important}
+#groupReport .group-table{width:100%!important;table-layout:fixed!important;border:2px solid #7b1738!important;border-collapse:collapse!important}
+#groupReport .group-table th{background:#fff!important;color:#111!important;font-weight:950!important;font-size:11px!important;border:2px solid #7b1738!important;border-bottom:3px solid #7b1738!important;padding:10px 4px!important;text-align:center!important;vertical-align:middle!important;overflow-wrap:normal!important;word-break:normal!important}
+#groupReport .group-table td{border:1.5px solid #8995a3!important;color:#18283b!important;padding:9px 4px!important;font-size:10px!important;vertical-align:middle!important;overflow-wrap:normal!important;word-break:normal!important}
+#groupReport .group-table tbody tr:nth-child(even){background:#f0f3f7!important}
+#groupReport .group-student{font-size:11px!important;line-height:1.2!important}
+#groupReport .group-pill{white-space:normal!important;display:inline-block!important;font-size:9px!important;line-height:1.15!important;padding:4px 3px!important}
+#groupReport .group-number{font-size:11px!important;font-weight:900!important;white-space:nowrap!important}
+#groupReport .group-net{font-size:12px!important;white-space:nowrap!important}
+#groupReport .group-slogan{background:linear-gradient(90deg,#fff 0%,#f7edf1 18%,#f7edf1 82%,#fff 100%)!important;color:#741532!important;border-top:2px solid #c8a66a!important;border-bottom:2px solid #c8a66a!important;font-family:Georgia,"Times New Roman",serif!important;font-style:italic!important;font-weight:900!important;font-size:24px!important;letter-spacing:.25px!important;text-shadow:0 1px 0 #fff!important;padding:13px 8px!important}
+@media print{
+ @page{size:A4 landscape;margin:5mm}
+ body.print-group-report #groupReport{width:100%!important;padding:0!important;border:2px solid #7b1738!important;box-sizing:border-box!important}
+ body.print-group-report #groupReport .group-report-head{padding:8px 10px 7px!important}
+ body.print-group-report #groupReport .group-brand{font-size:21pt!important}
+ body.print-group-report #groupReport .group-report-title{font-size:12pt!important}
+ body.print-group-report #groupReport .group-list-title{margin:6px 0 4px!important;padding:5px 8px!important;font-size:9pt!important}
+ body.print-group-report #groupReport .group-table{width:100%!important;table-layout:fixed!important;border:2px solid #7b1738!important}
+ body.print-group-report #groupReport .group-table th{font-size:8.5pt!important;font-weight:950!important;color:#111!important;background:#fff!important;border:1.7px solid #7b1738!important;padding:7px 3px!important;line-height:1.15!important}
+ body.print-group-report #groupReport .group-table td{font-size:8pt!important;border:1.2px solid #697789!important;padding:7px 3px!important;line-height:1.15!important}
+ body.print-group-report #groupReport .group-student{font-size:8.5pt!important}
+ body.print-group-report #groupReport .group-student small,body.print-group-report #groupReport .group-sub{font-size:7pt!important}
+ body.print-group-report #groupReport .group-pill{font-size:7pt!important;padding:3px 2px!important}
+ body.print-group-report #groupReport .group-number{font-size:8.5pt!important}
+ body.print-group-report #groupReport .group-net{font-size:9pt!important}
+ body.print-group-report #groupReport .group-slogan{font-size:19pt!important;padding:8px!important;margin-top:7px!important}
+ body.print-group-report #groupReport .group-sign{font-size:8pt!important}
+}
 </style></head><body><main class="wrap">
 <header class="hero"><div class="eyebrow">16–22 KASIM 2026 · 7 GÜNLÜK PROGRAM</div><h1>Değirmenlikızık Proje</h1><p class="hero-subtitle">Ara Tatil Takip Sistemi</p><span class="date-pill">Uludağ’ın Eteğinde Eğitimin Zirvesinde</span></header>
 <section id="auth" class="panel auth-wrap"><div class="auth-mark">🔐</div><h2>Güvenli Giriş</h2><p class="muted">Öğretmen veya öğrenci hesabınla güvenli şekilde giriş yap. İlk kez gelen öğrenciler hesap oluşturabilir.</p><div class="grid"><div class="field"><label>E-POSTA</label><input id="email" type="email" autocomplete="username" placeholder="E-posta adresi"></div><div class="field"><label>ŞİFRE</label><input id="password" type="password" autocomplete="current-password" placeholder="Şifren"></div></div><div class="actions"><button type="button" id="login">Giriş yap</button><button type="button" id="studentSignup" class="secondary">🎓 Öğrenci hesabı oluştur</button></div><p id="authMsg" class="notice">Öğretmen hesabı için tanımlı e-posta adresini kullan.</p></section>
@@ -879,7 +909,7 @@ function createParentReport(){const sid=$('reportStudent').value,date=$('reportD
  });
  const done=v=>v?'<span class="group-pill yes">✓ Tamamlandı</span>':'<span class="group-pill no">— Eksik</span>';
  const rows=entries.map((x,i)=>'<tr><td class="group-no">'+(i+1)+'</td><td class="group-student"><b>'+escapeHtml(x.st.full_name)+'</b><small>'+escapeHtml(String(x.st.grade||''))+'. Sınıf</small></td><td>'+ (x.l?'<span class="group-pill yes">Kayıt Var</span>':'<span class="group-pill no">Kayıt Yok</span>')+'</td><td>'+done(!!x.l?.homework_done)+'</td><td>'+done(!!x.l?.study_done)+'</td><td>'+done(!!x.l?.book_reading_done)+'<small class="group-sub">'+x.book+' sayfa</small></td><td>'+done(!!x.q?.completed)+'<small class="group-sub">'+escapeHtml(String(x.quranPages))+'</small></td><td class="group-number">'+x.solved+'</td><td class="group-number">'+x.correct+' / '+x.wrong+' / '+x.blank+'</td><td class="group-net">'+x.net.toFixed(2)+'</td></tr>').join('');
- box.innerHTML='<div class="group-report-head"><div class="group-brand">DEĞİRMENLİKIZIK PROJE</div><div class="group-report-title">TOPLU GÜN SONU ÖĞRENCİ KARNESİ</div><div class="group-report-date">'+date.split('-').reverse().join('.' )+' &nbsp; | &nbsp; '+entries.length+' ÖĞRENCİ</div></div><div class="group-list-title">ÖĞRENCİ BAZLI GÜNLÜK TAKİP</div><div class="tablewrap"><table class="group-table"><thead><tr><th>No</th><th>Öğrenci</th><th>Günlük Kayıt</th><th>Ödev</th><th>Akademik Etüt</th><th>Kitap Okuma</th><th>Kur’an</th><th>Çözülen Soru</th><th>Doğru / Yanlış / Boş</th><th>Net</th></tr></thead><tbody>'+rows+'</tbody></table></div><div class="group-legend"><span><b class="legend-dot green"></b> Tamamlandı</span><span><b class="legend-dot red"></b> Eksik / Kayıt Yok</span></div><div class="group-slogan">Uludağ’ın Eteğinde Eğitimin Zirvesinde</div><div class="group-sign">DEĞİRMENLİKIZIK PROJE · HÜSEYİN BAŞTÜRK</div>';
+ box.innerHTML='<div class="group-report-head"><div class="group-brand">DEĞİRMENLİKIZIK PROJE</div><div class="group-report-title">TOPLU GÜN SONU ÖĞRENCİ KARNESİ</div><div class="group-report-date">'+date.split('-').reverse().join('.' )+' &nbsp; | &nbsp; '+entries.length+' ÖĞRENCİ</div></div><div class="group-list-title">ÖĞRENCİ BAZLI GÜNLÜK TAKİP</div><div class="tablewrap"><table class="group-table"><colgroup><col style="width:4%"><col style="width:13%"><col style="width:9%"><col style="width:8%"><col style="width:11%"><col style="width:11%"><col style="width:9%"><col style="width:9%"><col style="width:18%"><col style="width:8%"></colgroup><thead><tr><th>No</th><th>Öğrenci</th><th>Günlük Kayıt</th><th>Ödev</th><th>Akademik Etüt</th><th>Kitap Okuma</th><th>Kur’an</th><th>Çözülen Soru</th><th>Doğru / Yanlış / Boş</th><th>Net</th></tr></thead><tbody>'+rows+'</tbody></table></div><div class="group-legend"><span><b class="legend-dot green"></b> Tamamlandı</span><span><b class="legend-dot red"></b> Eksik / Kayıt Yok</span></div><div class="group-slogan">Uludağ’ın Eteğinde Eğitimin Zirvesinde</div><div class="group-sign">DEĞİRMENLİKIZIK PROJE · HÜSEYİN BAŞTÜRK</div>';
  box.classList.remove('hidden');$('groupReportStatus').textContent='Toplu karne hazır. PDF / Yazdır düğmesiyle çıktı alabilirsin.';
 }
 $('makeGroupReport').onclick=createGroupReport;
