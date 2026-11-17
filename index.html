@@ -527,6 +527,82 @@ h1,h2,h3,.section-title,.report-section-title,.teacher-email-box h3,.teacher-stu
  body.print-report #parentReport .report-slogan{font-size:27px!important}
  body.print-report #parentReport .report-sign{font-size:20px!important}
 }
+
+/* Final typography and spacing refinements */
+#parentReport .report-kicker{
+ font-family:Georgia,"Times New Roman",serif!important;
+ font-size:clamp(27px,4vw,33px)!important;
+ font-weight:900!important;
+ letter-spacing:.15px!important;
+ line-height:1.12!important;
+}
+#parentReport .report-head h3{
+ font-family:system-ui,-apple-system,sans-serif!important;
+ font-size:15px!important;
+ font-weight:750!important;
+ letter-spacing:1.1px!important;
+ line-height:1.3!important;
+ margin:7px 0 10px!important;
+}
+#parentReport .report-table:not(.academic-table) td{
+ font-size:12px!important;
+ line-height:1.4!important;
+}
+#parentReport .report-table:not(.academic-table) .report-status,
+#parentReport .report-table:not(.academic-table) .report-mini-status{
+ display:inline-flex;
+ align-items:center;
+ justify-content:center;
+ font-family:system-ui,-apple-system,sans-serif!important;
+ font-size:11px!important;
+ font-weight:750!important;
+ line-height:1.2!important;
+ padding:5px 8px!important;
+ white-space:nowrap;
+}
+#parentReport .report-table:not(.academic-table) .report-status-list{
+ display:flex;
+ flex-wrap:wrap;
+ align-items:center;
+ gap:6px!important;
+}
+#parentReport .academic-table{
+ border-collapse:collapse!important;
+ border-spacing:0!important;
+}
+#parentReport .academic-table thead th{
+ padding:10px 10px!important;
+ font-size:13px!important;
+ line-height:1.35!important;
+ vertical-align:middle!important;
+}
+#parentReport .academic-table tbody td{
+ padding:11px 10px!important;
+ font-size:13px!important;
+ line-height:1.5!important;
+ vertical-align:middle!important;
+ border-bottom:1px solid #e6dcde!important;
+}
+#parentReport .academic-table tbody tr:last-child td{
+ border-bottom:1px solid #e6dcde!important;
+}
+@media(max-width:650px){
+ #parentReport .report-kicker{font-size:22px!important;letter-spacing:0!important}
+ #parentReport .report-head h3{font-size:12px!important;letter-spacing:.65px!important}
+ #parentReport .report-table:not(.academic-table) td{font-size:10px!important}
+ #parentReport .report-table:not(.academic-table) .report-status,
+ #parentReport .report-table:not(.academic-table) .report-mini-status{
+  font-size:9px!important;padding:4px 5px!important
+ }
+ #parentReport .report-table:not(.academic-table) .report-status-list{gap:4px!important}
+ #parentReport .academic-table thead th{padding:8px 6px!important;font-size:11px!important}
+ #parentReport .academic-table tbody td{padding:9px 6px!important;font-size:11px!important;line-height:1.4!important}
+}
+@media print{
+ body.print-report #parentReport .report-kicker{font-size:31px!important;font-family:Georgia,"Times New Roman",serif!important}
+ body.print-report #parentReport .report-head h3{font-size:15px!important}
+ body.print-report #parentReport .academic-table tbody td{padding:10px 9px!important;font-size:12px!important;line-height:1.45!important}
+}
 </style></head><body><main class="wrap">
 <header class="hero"><div class="eyebrow">16–22 KASIM 2026 · 7 GÜNLÜK PROGRAM</div><h1>Değirmenlikızık Proje</h1><p class="hero-subtitle">Ara Tatil Takip Sistemi</p><span class="date-pill">Uludağ’ın Eteğinde Eğitimin Zirvesinde</span></header>
 <section id="auth" class="panel auth-wrap"><div class="auth-mark">🔐</div><h2>Güvenli Giriş</h2><p class="muted">Öğretmen veya öğrenci hesabınla güvenli şekilde giriş yap. İlk kez gelen öğrenciler hesap oluşturabilir.</p><div class="grid"><div class="field"><label>E-POSTA</label><input id="email" type="email" autocomplete="username" placeholder="E-posta adresi"></div><div class="field"><label>ŞİFRE</label><input id="password" type="password" autocomplete="current-password" placeholder="Şifren"></div></div><div class="actions"><button type="button" id="login">Giriş yap</button><button type="button" id="studentSignup" class="secondary">🎓 Öğrenci hesabı oluştur</button></div><p id="authMsg" class="notice">Öğretmen hesabı için tanımlı e-posta adresini kullan.</p></section>
