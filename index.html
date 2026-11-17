@@ -464,6 +464,69 @@ h1,h2,h3,.section-title,.report-section-title,.teacher-email-box h3,.teacher-stu
  body.print-report #parentReport .report-slogan{font-size:27px!important}
  body.print-report #parentReport .report-sign{font-size:20px!important}
 }
+
+/* Restore the previous clean report layout above the footer; keep slogan/signature styling */
+#parentReport.parent-report{padding:12px 10px 10px;border:1px solid #e3d9dc;border-radius:12px;background:#fff;box-shadow:none}
+#parentReport .report-head{display:flex;align-items:flex-start;justify-content:space-between;min-height:0;margin:0 0 10px;padding:18px 16px 14px;background:#710f32!important;color:#fff;border:0;border-bottom:4px solid #c7a56a;border-radius:0;overflow:visible}
+#parentReport .report-head:after{display:none}
+#parentReport .report-brand{position:static}
+#parentReport .report-kicker{font-family:system-ui,-apple-system,sans-serif;font-size:24px;font-weight:900;letter-spacing:.2px;line-height:1.15;text-shadow:none}
+#parentReport .report-head h3{font-family:system-ui,-apple-system,sans-serif;font-size:16px;font-weight:800;letter-spacing:0;margin:7px 0 10px;color:#fff}
+#parentReport .report-date{display:inline-block;background:#fff;color:#26334a;border:1px solid #d5b879;border-radius:22px;padding:5px 14px;font-size:13px;box-shadow:none}
+#parentReport .report-student-row{display:flex;align-items:stretch;gap:8px;margin:0 8px 12px}
+#parentReport .report-student-name{display:flex;align-items:center;flex:1;min-width:0;margin:0;padding:12px 13px;background:#fff;border:1px solid #ddcbd0;border-radius:13px;color:#64112f;font-family:system-ui,-apple-system,sans-serif;font-size:25px;font-weight:900;box-shadow:none}
+#parentReport .report-student-row .report-grade{display:flex;align-items:center;align-self:stretch;padding:8px 12px;background:#fff5e6;border:1px solid #d7b777;border-radius:10px;color:#68102f;font-size:14px;font-weight:850}
+#parentReport .report-legend{display:flex;gap:7px;flex-wrap:wrap;margin:0 8px 10px}
+#parentReport .report-status{border-radius:8px;padding:4px 8px}
+#parentReport .report-metrics{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:7px;margin:0 8px 12px}
+#parentReport .report-metric{min-height:0;padding:8px 9px;background:#fff;border:1px solid #ded2d5;border-radius:11px;box-shadow:none}
+#parentReport .report-metric:before{display:none}
+#parentReport .report-metric strong{display:block;color:#25364c;font-size:23px;line-height:1.15}
+#parentReport .report-metric span{font-size:11px;color:#536071;font-weight:500}
+#parentReport .report-section-title{display:block;margin:12px 8px 0;padding:9px 12px;border-radius:10px 10px 0 0;background:#710f32!important;color:#fff!important;font-size:15px;font-weight:900;letter-spacing:.4px;box-shadow:none}
+#parentReport .report-section-title:before{display:none}
+#parentReport .report-table{width:calc(100% - 16px)!important;margin:0 8px 12px!important;border:0;border-radius:0 0 9px 9px;border-collapse:collapse;border-spacing:0;overflow:visible;background:#fff;table-layout:auto!important}
+#parentReport .report-table th{padding:8px 8px;background:#f2e6e9;color:#18263e;font-size:12px;font-weight:850;border-bottom:1px solid #dfd3d6}
+#parentReport .report-table td{padding:8px 8px;background:#fff;color:#263448;font-size:12px;line-height:1.35;border-bottom:1px solid #e6dcde}
+#parentReport .report-table tr:last-child td{border-bottom:1px solid #e6dcde}
+#parentReport .report-status-list{gap:5px}
+#parentReport .report-mini-status{border-radius:8px;padding:4px 6px;font-size:11px}
+#parentReport .report-note{margin:4px 8px 0;padding:8px 10px;border:1px solid #e8ddda;border-radius:9px;background:#faf7f5;font-size:10px;line-height:1.4}
+/* The slogan and navy signature deliberately retain the latest design */
+#parentReport .report-slogan{margin:14px 10px 0!important;padding:14px 18px!important;border:3px solid #d5b36f!important;border-radius:32px!important;background:linear-gradient(100deg,#650d2d,#8b173e 52%,#650d2d)!important;color:#fff!important;box-shadow:0 3px 9px #4c102018!important;font-family:Georgia,serif!important;font-size:clamp(21px,3.4vw,29px)!important;font-weight:800!important;line-height:1.25!important;text-align:center!important}
+#parentReport .report-sign{margin:8px 10px 2px!important;text-align:center!important;color:#102b52!important;font-family:Georgia,serif!important;font-size:clamp(17px,2.6vw,22px)!important;font-weight:900!important;line-height:1.3!important}
+#parentReport .report-sign span{color:#102b52!important;font-weight:900!important}
+@media(max-width:650px){
+ #parentReport.parent-report{padding:8px 6px}
+ #parentReport .report-head{padding:15px 12px 12px}
+ #parentReport .report-kicker{font-size:20px}
+ #parentReport .report-head h3{font-size:13px;letter-spacing:0}
+ #parentReport .report-date{font-size:11px;padding:4px 10px}
+ #parentReport .report-student-row{margin-left:5px;margin-right:5px;gap:6px}
+ #parentReport .report-student-name{font-size:19px;padding:10px 8px}
+ #parentReport .report-student-row .report-grade{font-size:11px;padding:7px}
+ #parentReport .report-legend,#parentReport .report-metrics{margin-left:5px;margin-right:5px}
+ #parentReport .report-metrics{gap:5px}
+ #parentReport .report-metric{padding:7px 5px}
+ #parentReport .report-metric strong{font-size:18px}
+ #parentReport .report-metric span{font-size:9px}
+ #parentReport .report-section-title{margin-left:5px;margin-right:5px;padding:8px 9px;font-size:12px}
+ #parentReport .report-table{width:calc(100% - 10px)!important;margin-left:5px!important;margin-right:5px!important}
+ #parentReport .report-table th,#parentReport .report-table td{padding:6px 5px;font-size:10px}
+ #parentReport .report-mini-status{font-size:9px;padding:3px 4px}
+ #parentReport .report-note{margin-left:5px;margin-right:5px;font-size:9px}
+ #parentReport .report-slogan{margin-left:5px!important;margin-right:5px!important;font-size:18px!important;padding:11px 8px!important}
+ #parentReport .report-sign{font-size:15px!important;margin-left:5px!important;margin-right:5px!important}
+}
+@media print{
+ @page{size:A4 portrait;margin:8mm}
+ body.print-report #parentReport.parent-report{padding:0!important;border:0!important;box-shadow:none!important}
+ body.print-report #parentReport .report-head{min-height:0!important}
+ body.print-report #parentReport .report-metrics{grid-template-columns:repeat(4,minmax(0,1fr))!important}
+ body.print-report #parentReport .report-metric{padding:8px 9px!important}
+ body.print-report #parentReport .report-slogan{font-size:27px!important}
+ body.print-report #parentReport .report-sign{font-size:20px!important}
+}
 </style></head><body><main class="wrap">
 <header class="hero"><div class="eyebrow">16–22 KASIM 2026 · 7 GÜNLÜK PROGRAM</div><h1>Değirmenlikızık Proje</h1><p class="hero-subtitle">Ara Tatil Takip Sistemi</p><span class="date-pill">Uludağ’ın Eteğinde Eğitimin Zirvesinde</span></header>
 <section id="auth" class="panel auth-wrap"><div class="auth-mark">🔐</div><h2>Güvenli Giriş</h2><p class="muted">Öğretmen veya öğrenci hesabınla güvenli şekilde giriş yap. İlk kez gelen öğrenciler hesap oluşturabilir.</p><div class="grid"><div class="field"><label>E-POSTA</label><input id="email" type="email" autocomplete="username" placeholder="E-posta adresi"></div><div class="field"><label>ŞİFRE</label><input id="password" type="password" autocomplete="current-password" placeholder="Şifren"></div></div><div class="actions"><button type="button" id="login">Giriş yap</button><button type="button" id="studentSignup" class="secondary">🎓 Öğrenci hesabı oluştur</button></div><p id="authMsg" class="notice">Öğretmen hesabı için tanımlı e-posta adresini kullan.</p></section>
