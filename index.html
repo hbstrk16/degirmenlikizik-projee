@@ -603,6 +603,83 @@ h1,h2,h3,.section-title,.report-section-title,.teacher-email-box h3,.teacher-stu
  body.print-report #parentReport .report-head h3{font-size:15px!important}
  body.print-report #parentReport .academic-table tbody td{padding:10px 9px!important;font-size:12px!important;line-height:1.45!important}
 }
+
+/* Match daily responsibility typography and rhythm to academic table */
+#parentReport .report-head h3{
+ font-size:17px!important;
+ line-height:1.35!important;
+ letter-spacing:1.15px!important;
+}
+#parentReport .report-table:not(.academic-table) th{
+ padding:10px 10px!important;
+ font-size:13px!important;
+ line-height:1.35!important;
+ vertical-align:middle!important;
+}
+#parentReport .report-table:not(.academic-table) td{
+ padding:11px 10px!important;
+ font-size:13px!important;
+ line-height:1.5!important;
+ vertical-align:middle!important;
+}
+#parentReport .report-table:not(.academic-table) .report-status,
+#parentReport .report-table:not(.academic-table) .report-mini-status{
+ font-size:13px!important;
+ line-height:1.35!important;
+ padding:5px 8px!important;
+ border-radius:8px!important;
+}
+#parentReport .report-table:not(.academic-table) .report-status-list{
+ display:flex!important;
+ flex-wrap:wrap!important;
+ align-items:center!important;
+ gap:6px!important;
+}
+#parentReport .academic-table thead th{
+ padding:10px 10px!important;
+ font-size:13px!important;
+ line-height:1.35!important;
+}
+#parentReport .academic-table tbody td{
+ padding:11px 10px!important;
+ font-size:13px!important;
+ line-height:1.5!important;
+}
+@media(max-width:650px){
+ #parentReport .report-head h3{
+  font-size:13px!important;
+  line-height:1.35!important;
+  letter-spacing:.7px!important;
+ }
+ #parentReport .report-table:not(.academic-table) th,
+ #parentReport .academic-table thead th{
+  padding:8px 6px!important;
+  font-size:11px!important;
+  line-height:1.35!important;
+ }
+ #parentReport .report-table:not(.academic-table) td,
+ #parentReport .academic-table tbody td{
+  padding:9px 6px!important;
+  font-size:11px!important;
+  line-height:1.4!important;
+ }
+ #parentReport .report-table:not(.academic-table) .report-status,
+ #parentReport .report-table:not(.academic-table) .report-mini-status{
+  font-size:11px!important;
+  line-height:1.25!important;
+  padding:4px 5px!important;
+ }
+ #parentReport .report-table:not(.academic-table) .report-status-list{gap:4px!important}
+}
+@media print{
+ body.print-report #parentReport .report-head h3{font-size:17px!important}
+ body.print-report #parentReport .report-table:not(.academic-table) th,
+ body.print-report #parentReport .academic-table thead th{padding:10px 10px!important;font-size:13px!important}
+ body.print-report #parentReport .report-table:not(.academic-table) td,
+ body.print-report #parentReport .academic-table tbody td{padding:11px 10px!important;font-size:13px!important;line-height:1.5!important}
+ body.print-report #parentReport .report-table:not(.academic-table) .report-status,
+ body.print-report #parentReport .report-table:not(.academic-table) .report-mini-status{font-size:12px!important}
+}
 </style></head><body><main class="wrap">
 <header class="hero"><div class="eyebrow">16–22 KASIM 2026 · 7 GÜNLÜK PROGRAM</div><h1>Değirmenlikızık Proje</h1><p class="hero-subtitle">Ara Tatil Takip Sistemi</p><span class="date-pill">Uludağ’ın Eteğinde Eğitimin Zirvesinde</span></header>
 <section id="auth" class="panel auth-wrap"><div class="auth-mark">🔐</div><h2>Güvenli Giriş</h2><p class="muted">Öğretmen veya öğrenci hesabınla güvenli şekilde giriş yap. İlk kez gelen öğrenciler hesap oluşturabilir.</p><div class="grid"><div class="field"><label>E-POSTA</label><input id="email" type="email" autocomplete="username" placeholder="E-posta adresi"></div><div class="field"><label>ŞİFRE</label><input id="password" type="password" autocomplete="current-password" placeholder="Şifren"></div></div><div class="actions"><button type="button" id="login">Giriş yap</button><button type="button" id="studentSignup" class="secondary">🎓 Öğrenci hesabı oluştur</button></div><p id="authMsg" class="notice">Öğretmen hesabı için tanımlı e-posta adresini kullan.</p></section>
