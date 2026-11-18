@@ -829,7 +829,30 @@ h1,h2,h3,.section-title,.report-section-title,.teacher-email-box h3,.teacher-stu
  body.print-report #parentReport .branch-exam-table th{font-size:12pt!important;padding:12px 10px!important}
  body.print-report #parentReport .branch-exam-table td{font-size:13pt!important;font-weight:750!important;padding:14px 10px!important}
  body.print-report #parentReport .report-section-title.branch-exam-heading{font-size:14pt!important;padding:10px 12px!important;margin:0 0 10px!important}
-}</style></head><body><main class="wrap">
+}
+/* Kesin sayfa akışı: rapor mutlak konumlandırılmadan normal yazdırma akışında basılır */
+@media print{
+ @page{size:A4 portrait;margin:10mm}
+ body.print-report #parentReport{
+  position:static!important;inset:auto!important;left:auto!important;right:auto!important;top:auto!important;
+  width:100%!important;max-width:100%!important;height:auto!important;min-height:0!important;
+  overflow:visible!important;transform:none!important;display:block!important;
+  page-break-inside:auto!important;break-inside:auto!important;
+ }
+ body.print-report #parentReport *{page-break-inside:auto!important;break-inside:auto!important}
+ body.print-report #parentReport .branch-exam-section{
+  display:block!important;position:static!important;clear:both!important;
+  page-break-before:always!important;break-before:page!important;
+  page-break-inside:avoid!important;break-inside:avoid!important;
+  margin-top:0!important;padding-top:0!important;
+ }
+ body.print-report #parentReport .branch-exam-heading{page-break-after:avoid!important;break-after:avoid!important}
+ body.print-report #parentReport .branch-exam-table{width:100%!important;table-layout:fixed!important;border-collapse:collapse!important;page-break-inside:avoid!important;break-inside:avoid!important}
+ body.print-report #parentReport .branch-exam-table th{font-size:14pt!important;padding:14px 10px!important}
+ body.print-report #parentReport .branch-exam-table td{font-size:15pt!important;padding:16px 10px!important;font-weight:800!important}
+ body.print-report #parentReport .branch-exam-table tr{page-break-inside:avoid!important;break-inside:avoid!important}
+}
+</style></head><body><main class="wrap">
 <header class="hero"><div class="eyebrow">16–22 KASIM 2026 · 7 GÜNLÜK PROGRAM</div><h1>Değirmenlikızık Proje</h1><p class="hero-subtitle">Ara Tatil Takip Sistemi</p><span class="date-pill">Uludağ’ın Eteğinde Eğitimin Zirvesinde</span></header>
 <section id="auth" class="panel auth-wrap"><div class="auth-mark">🔐</div><h2>Güvenli Giriş</h2><p class="muted">Öğretmen veya öğrenci hesabınla güvenli şekilde giriş yap. İlk kez gelen öğrenciler hesap oluşturabilir.</p><div class="grid"><div class="field"><label>E-POSTA</label><input id="email" type="email" autocomplete="username" placeholder="E-posta adresi"></div><div class="field"><label>ŞİFRE</label><input id="password" type="password" autocomplete="current-password" placeholder="Şifren"></div></div><div class="actions"><button type="button" id="login">Giriş yap</button><button type="button" id="studentSignup" class="secondary">🎓 Öğrenci hesabı oluştur</button></div><p id="authMsg" class="notice">Öğretmen hesabı için tanımlı e-posta adresini kullan.</p></section>
 <section id="app" class="hidden">
