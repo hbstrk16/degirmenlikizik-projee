@@ -867,18 +867,18 @@ h1,h2,h3,.section-title,.report-section-title,.teacher-email-box h3,.teacher-stu
  body.print-report #parentReport .report-page-two .report-note{margin:8mm 0 0!important;font-size:10pt!important}
  body.print-report #parentReport .report-page-two .report-slogan{margin:8mm 0 0!important;font-size:23pt!important}
  body.print-report #parentReport .report-page-two .report-sign{margin:5mm 0 0!important;font-size:15pt!important}
-}/* Günlük veli karnesi: kesin iki sayfalı çıktı */
+}/* Günlük veli karnesi: iki fiziksel A4 sayfası */
 @media print{
  @page{size:A4 portrait;margin:8mm}
- html,body.print-report{width:auto!important;height:auto!important;min-height:0!important;margin:0!important;padding:0!important;background:#fff!important}
+ html,body.print-report{margin:0!important;padding:0!important;width:auto!important;height:auto!important;min-height:0!important;background:#fff!important}
  body.print-report *{visibility:hidden!important}
  body.print-report #parentReport,body.print-report #parentReport *{visibility:visible!important}
- body.print-report #app,body.print-report #teacher{display:block!important;width:auto!important;height:auto!important;max-width:none!important;max-height:none!important;min-height:0!important;overflow:visible!important}
+ body.print-report #app,body.print-report #teacher{display:block!important;width:auto!important;max-width:none!important;height:auto!important;min-height:0!important;max-height:none!important;overflow:visible!important}
  body.print-report #parentReport{display:block!important;position:static!important;inset:auto!important;float:none!important;width:100%!important;max-width:none!important;height:auto!important;min-height:0!important;max-height:none!important;margin:0!important;padding:0!important;border:0!important;box-shadow:none!important;overflow:visible!important;transform:none!important}
- body.print-report #parentReport .report-print-page{display:block!important;position:static!important;float:none!important;width:100%!important;height:auto!important;min-height:0!important;max-height:none!important;overflow:visible!important;box-sizing:border-box!important;margin:0!important;padding:0!important;transform:none!important;break-inside:auto!important;page-break-inside:auto!important}
- body.print-report #parentReport .report-page-one{break-after:page!important;page-break-after:always!important}
- body.print-report #parentReport .report-page-two{break-before:page!important;page-break-before:always!important;break-after:auto!important;page-break-after:auto!important;padding-top:2mm!important}
- body.print-report #parentReport .branch-exam-section{display:block!important;position:static!important;width:100%!important;margin:0!important;padding:0!important;break-before:auto!important;page-break-before:auto!important;break-inside:avoid!important;page-break-inside:avoid!important}
+ body.print-report #parentReport .report-print-page{display:block!important;position:relative!important;float:none!important;box-sizing:border-box!important;width:100%!important;height:277mm!important;min-height:277mm!important;max-height:277mm!important;margin:0!important;padding:0!important;overflow:hidden!important;transform:none!important;break-inside:avoid!important;page-break-inside:avoid!important}
+ body.print-report #parentReport .report-page-one{zoom:.82;width:121.95%!important;break-after:page!important;page-break-after:always!important}
+ body.print-report #parentReport .report-page-two{zoom:1;width:100%!important;break-before:auto!important;page-break-before:auto!important;break-after:auto!important;page-break-after:auto!important;padding-top:2mm!important}
+ body.print-report #parentReport .branch-exam-section{display:block!important;position:static!important;width:100%!important;margin:0!important;padding:0!important;break-inside:avoid!important;page-break-inside:avoid!important}
  body.print-report #parentReport .branch-exam-heading{margin:0 0 7mm!important;padding:4mm!important;font-size:16pt!important;break-after:avoid!important;page-break-after:avoid!important}
  body.print-report #parentReport .branch-exam-table{display:table!important;width:100%!important;margin:0!important;table-layout:fixed!important;border-collapse:collapse!important;break-inside:avoid!important;page-break-inside:avoid!important;font-size:12pt!important}
  body.print-report #parentReport .branch-exam-table thead{display:table-header-group!important}
